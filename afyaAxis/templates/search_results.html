@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Search results for {{query}}{% endblock %}
+
+{% block content %}   
+<section class="results">
+    <div class="resultsdiv">
+        <div class="resultstop">
+            <p>Search results for <span>"{{query}}"</span></p>
+        </div>
+        {% if not doctors and not clinics %}
+        <div class="resultsontainer">
+            <p>Oops!!  No results found</p>
+        </div>
+        {% endif %}
+        <div class="resultsontainer2">
+            {% if doctors %}
+            <div class="doctors">
+                <h1>Doctors</h1>
+                <div class="doctorsresult">
+                    {% for doctor in doctors %}
+                    <div class="doctorinfo">
+                        <a href="{% url 'doctor_detail' doctor.id %}">
+                            <div class="imageside">
+                                {% if doctor.profile_picture%}
+                                 <img src="{{doctor.profile_picture.url}}" alt="" />
+                                {%else%}
+                                    <img src="{%static 'images/logo.png'%}" alt="">
+                                {%endif%}
+                            </div>
+                            <div class="detailsside">
+                                <h2>Dr. {{doctor.name}}</h2>
+                                <h3><span>Specialization: </span>{{doctor.specialization}}</h3>
+                                <h3><span>Clinic: </span>{{doctor.clinic}}</h3>
+                                <h3><span>Location: </span>{{doctor.location}}</h3>
+                            </div>
+                        </a>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+            {% endif%}
+            {% if clinics or clinicServices%}
+            <div class="doctors">
+                <h1>Clinics</h1>
+                <div class="doctorsresult">
+                    {% for clinic in clinics %}
+                    <div class="doctorinfo">
+                        <a href="{% url 'clinicDetails' clinic.id %}">
+                            <div class="imageside">
+                                {% if clinic.image%}
+                                 <img src="{{clinic.image.url}}" alt="" />
+                                {%else%}
+                                    <img src="{%static 'images/logo.png'%}" alt="">
+                                {%endif%}
+                            </div>
+                            <div class="detailsside">
+                                <h2>{{clinic.name}}</h2>
+                                <h3><span>Address: </span>{{clinic.address}}</h3>
+                            </div>
+                        </a>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+            {%endif%}
+        </div>
+    </div>
+</section>
+{% endblock %}

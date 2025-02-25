@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Login to Afya - Axis{% endblock %}
+{% block content %}
+<section class="appointment">
+    <div class="appointmentbox">
+        <h1>Book Your Appointment</h1>
+        <p>Fill out the form below to request a video or call session with a doctor.</p>
+        <form action="." method="POST">
+            {% csrf_token %}
+              <div class="form-group">
+                  <label for="name">Doctor Name</label>
+                  {{form.doctor}}
+                  {% comment %} <input type="text" id="doctor" name="doctor" placeholder="Enter your full name" required> {% endcomment %}
+                </div>
+                {% comment %} <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div> {% endcomment %}
+                <div class="form-group">
+                  <h2>Session Type</h2>
+                  <div class="session-type">
+                      <div class="type">
+                          <label for="video">Video call</label>
+                          {{form.session_type}}
+                          {% comment %} <input id="video" type="radio" name="session-type" value="video"> {% endcomment %}
+                      </div>
+                      {% comment %} <div class="type">
+                          <label for="audio">Audio call</label>
+                          <input id="audio" type="radio" name="session-type" value="audio"> 
+                      </div> {% endcomment %}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <h2>Reasons</h2>
+                  {{form.reason}}
+                  {% comment %} <textarea id="symptoms" name="symptoms" rows="5" placeholder="Enter your symptoms here..." required></textarea> {% endcomment %}
+                </div>
+                <div class="form-group">
+                  <h2>Describe Your Symptoms</h2>
+                  {{form.symptoms}}
+                  {% comment %} <textarea id="symptoms" name="symptoms" rows="5" placeholder="Enter your symptoms here..." required></textarea> {% endcomment %}
+                </div>
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  {{form.location}}
+                  {% comment %} <input type="text" id="location" name="location" placeholder="Enter your location" required> {% endcomment %}
+                </div>
+                <div class="form-group">
+                  <label for="appointment_date">Appointment_date</label>
+                  {{form.appointment_date}}
+                  {% comment %} <input type="text" id="location" name="location" placeholder="Enter your location" required> {% endcomment %}
+                </div>
+                <div class="form-group">
+                  <label for="time">Appointment_time</label>
+                  {{form.time}}
+                  {% comment %} <input type="text" id="location" name="location" placeholder="Enter your location" required> {% endcomment %}
+                </div>
+                <button>Request Appoinment</button>
+                {% comment %} <input type="submit" value="submit appointment"> {% endcomment %}
+        </form>
+    </div> 
+  </section>
+{% endblock %}
+

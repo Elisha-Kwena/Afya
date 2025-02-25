@@ -1,0 +1,132 @@
+{% load static %}
+<div class="sidebar" id="sidebar">
+    <div class="home">
+        <a href="{% url 'home' %}">
+            <img src="{% static '/images/hospital.png'%}" alt="">
+            <h2>Home</h2>
+        </a>
+    </div>
+    <div class="links">
+        <ul>
+            <li>
+                <a href="{% url 'doctors_list' %}">
+                    <img src="{% static '/images/telemedicine.png'%}" alt="">
+                    <h2>OUR DOCTORS</h2>
+                </a>
+            </li>
+            <li>
+                <div class="link">
+                    <img src="{% static '/images/medical-book.png'%}" alt="">
+                    <h2>HEALTH EDUCATION</h2>
+                    <ion-icon class="icon" name="chevron-forward"></ion-icon>
+                </div>
+                <ul class="dropdown">
+                    <li>
+                        <a href="{% url 'maternal' %}">
+                            <img src="{% static '/images/mother.png'%}" alt="">
+                            <h3>Maternal & Child Health</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'diseases' %}">
+                            <img src="{% static '/images/diseaseinfo.png'%}" alt="">
+                            <h3>Disase Information</h3>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="link">
+                    <img src="{% static '/images/healthalerts.png'%}" alt="">
+                    <h2>HEALTH ALERTS</h2>
+                    <ion-icon class="icon" name="chevron-forward"></ion-icon>
+                </div>
+                <ul class="dropdown">
+                    <li>
+                        <a href="">
+                            <img src="{% static '/images/alert.png'%}" alt="">
+                            <h3>Outbreak Alerts</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'healthconcerns' %}">
+                            <img src="{% static '/images/public-health.png'%}" alt="">
+                            <h3>Public Health concerns</h3>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="link">
+                    <img src="{% static '/images/emergencyservices.png'%}" alt="">
+                    <h2>EMERGENCY SERVICES</h2>
+                    <ion-icon class="icon" name="chevron-forward"></ion-icon>
+                </div>
+                <ul class="dropdown">
+                    <li>
+                        <a href="">
+                            <img src="{% static '/images/first-aid-kit.png'%}" alt="">
+                            <h3>First Aid Guide</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'clinics' %}">
+                            <img src="{% static '/images/phone.png'%}" alt="">
+                            <h3>Local Emergency Contacts</h3>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="link">
+                    <img src="{% static '/images/health monitoringtools.png'%}" alt="">
+                    <h2>HEALTH MONITORING TOOLS</h2>
+                    <ion-icon class="icon" name="chevron-forward"></ion-icon>
+                </div>
+                <ul class="dropdown">
+                    <li>
+                        <a href="{% url 'chatbot' %}">
+                            <img src="{% static '/images/symptoms.png'%}" alt="">
+                            <h3>Health Monitoring tools</h3>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="link">
+                    <img src="{% static '/images/community support.png'%}" alt="">
+                    <h2>COMMUNITY SUPPORT</h2>
+                    <ion-icon class="icon" name="chevron-forward"></ion-icon>
+                </div>
+                <ul class="dropdown">
+                    <li>
+                        <a href="">
+                            <img src="{% static '/images/discussion.png'%}" alt="">
+                            <h3>Discusion Forums</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="{% static '/images/health.png'%}" alt="">
+                            <h3>Health Campaigns</h3>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+    <div class="settings">
+        <a href="">
+            <img src="{% static '/images/settings.png'%}" alt="">
+            <h2>settings</h2>
+        </a>
+    </div>
+    <div class="exit">
+        <a href="{% url 'logout' %}">
+            <img src="{% static '/images/logout.png'%}" alt="">
+            <h2>logout</h2>
+        </a>
+    </div>
+    
+    </div>
+</div>

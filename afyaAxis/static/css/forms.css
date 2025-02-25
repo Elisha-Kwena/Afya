@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+main{
+    width: 100%;
+}
+.formbox{
+    width: 80%;
+    /* min-height: 100vh; */
+    display: block;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+
+}
+.formbox .contents{
+    width: 100%;
+    max-height: 700px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #1EBC45;
+}
+.formbox .logobox{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.formbox .logobox img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.formbox form{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(#0075424a,#3aa34672,#0075424e);
+}
+.formbox form .welcome{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    margin-left: 20px;
+    font-weight: 900;
+}
+.formbox form .welcome span{
+    color: azure;
+}
+.formbox form h1{
+    font-family: "Alfa Slab One", serif;
+    color: #ffffff;
+    margin-left: 20px;
+    font-size: 40px;
+}
+/* From Uiverse.io by AmIt-DasIT */ 
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    color: white;
+    padding: 20px;
+  }
+  
+  .container .label {
+    font-size: 18px;
+    padding-left: 10px;
+    position: absolute;
+    top: 30px;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  
+  .input {
+    width: 80%;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  .input:focus {
+    border: 2px solid transparent;
+    color: #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  .container .input:valid ~ .label,
+  .container .input:focus ~ .label {
+    transition: 0.3s;
+    padding-left: 2px;
+    transform: translateY(-35px);
+  }
+  
+  .container .input:valid,
+  .container .input:focus {
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+
+.terms{
+    width: 81%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.terms .inputdiv{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.terms a{
+    font-size: 14px;
+    color: #0c8de0;
+}
+.inputdiv label{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.inputdiv input{
+    width: 20px;
+    height: 20px;
+}
+.submitbtn{
+    padding: 20px;
+}
+.submitbtn a{
+    display:block;
+    margin-top: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #0c8de0;
+}
+.message{
+    margin-top: 10px;
+    width: 80%;
+    /* display:block;
+    margin: 0 auto; */
+    padding:0 10px;
+    
+}
+
+.message p{
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  background-color: red;
+  padding:0 5px;
+  border-radius: 5px;
+}
+
+
+.btn-17,
+.btn-17 *,
+.btn-17 :after,
+.btn-17 :before,
+.btn-17:after,
+.btn-17:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-17 {
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-17:disabled {
+  cursor: default;
+}
+
+.btn-17:-moz-focusring {
+  outline: auto;
+}
+
+.btn-17 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-17 [hidden] {
+  display: none;
+}
+
+.btn-17 {
+    width: 80%;
+  border-radius: 10px;
+  border-width: 2px;
+  padding: 10px;
+  z-index: 0;
+}
+
+.btn-17,
+.btn-17 .text-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-17 .text-container {
+  display: block;
+  mix-blend-mode: difference;
+}
+
+.btn-17 .text {
+  display: block;
+  position: relative;
+}
+
+.btn-17:hover .text {
+  -webkit-animation: move-up-alternate 0.3s forwards;
+  animation: move-up-alternate 0.3s forwards;
+}
+
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.btn-17:after,
+.btn-17:before {
+  --skew: 0.2;
+  background:#007542;
+  content: "";
+  display: block;
+  height: 102%;
+  left: calc(-50% - 50% * var(--skew));
+  pointer-events: none;
+  position: absolute;
+  top: -104%;
+  transform: skew(calc(150deg * var(--skew))) translateY(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: 110%;
+}
+
+.btn-17:after {
+  --progress: 0%;
+  left: calc(50% + 50% * var(--skew));
+  top: 102%;
+  z-index: -1;
+}
+
+.btn-17:hover:before {
+  --progress: 100%;
+}
+
+.btn-17:hover:after {
+  --progress: -102%;
+}
+

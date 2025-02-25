@@ -1,0 +1,23 @@
+{% load static %}
+<div class="sidebarleft">
+    <div class="sidebarheader">
+        <div class="adminimage">
+            <img src="{{ admin_profile.profile_picture.url}}" alt="">
+        </div>
+    </div>
+    <div class="adminname">
+        <h2>{{ admin_user.first_name }} {{ admin_user.last_name }}</h2>
+    </div>
+    <div class="menuitems">
+        <a href="{%url 'admin_dashboard' %}"><i class="fa-solid fa-hospital"></i></i>Home</a>
+        <a href="{%url 'users'%}"><i class="fa-solid fa-users"></i>Registered users</a>
+        <a href="{% url 'doctorspage'%}"><i class="fa-solid fa-user-doctor"></i>Doctors</a>
+        <a href="{%url 'adminclinics'%}"><i class="fa-solid fa-house-medical-circle-check"></i>Clinics</a>
+        <a href=""><i class="fa-solid fa-server"></i>Services</a>
+        <a href=""><i class="fa-solid fa-sack-dollar"></i></i>Income</a>
+    </div>
+    <div class="logoutdiv">
+        <a href=""><i class="fa-solid fa-gear"></i>Settings</a>
+        <a href=""><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+    </div>
+</div>

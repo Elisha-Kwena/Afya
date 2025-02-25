@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Afya - Axis | Clinics{% endblock %}
+{% block content %} 
+<section class="cliniclist">
+    <div class="clinicscontainers">
+        <h1>Clinics under Afya Axis</h1>
+        <div class="clinics">
+            {% for clinic in clinics%}
+            <div class="clinicbox">
+                <div class="clinicimage">
+                    <img class="mainlogo" src="{% static 'images/mainlogo.jpeg'%}" alt="">
+                    <h2>Afya Axis Clinics</h2>
+                    {%if clinic.image%}
+                    <img src="{{clinic.image.url}}" alt="">
+                    {%else%}
+                    <img class="mainlogo" src="{% static 'images/mainlogo.jpeg'%}" alt="">
+                    {%endif%}
+                </div>
+                <div class="clinicname">
+                    <h1>{{clinic.name}}</h1>
+                </div>
+                <div class="viewbutton">
+                    <form action="{% url 'clinicDetails' clinic.id %}">
+                        <button>View Clinic</button>
+                    </form>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        {%if request.user.is_staff or request.user.is_superuser%}
+        <div class="newclinic">
+            <a href="{% url 'new_clinics' %}">New Clinic registration</a>
+        </div>
+        {%endif%}
+    </div>
+</section>
+{% endblock %}

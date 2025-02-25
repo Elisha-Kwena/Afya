@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Profile Update{% endblock %}
+
+{% block content %}   
+<section class="profile" id="mainbar">
+    <div class="updateprofile">
+        <div class="profile-header">
+            <h2>Update Profile</h2>
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="profilepicture">
+                <div class="current">
+                    {% if user.profile_picture %}
+                        <img class="profile-picture" src="{{ user.profile.profile_picture.url }}" alt="">
+                    {% else %}
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    {% endif %}
+                </div>
+                <div class="new">
+                    <div class="fromgallery">
+                        <input type="file" id="image1" name="profile_picture">
+                        {{profile_form.profile_picture}}
+                        <label for="image1">
+                            <img class="img" src="{% static 'images/picture.png' %}" alt="">
+                            <h2>Select from gallery</h2>
+                        </label>
+                    </div> 
+                </div>
+            </div>
+            <div class="userdetails">
+                <div class="inputdiv">
+                    <label for="username">Username</label><br>
+                    {{user_form.username}}
+                    {% comment %} <input type="text" name="username" id="username" value="" class="input"> {% endcomment %}
+                </div>
+                <div class="inputdiv">
+                    <label for="firstname">FirstName</label><br>
+                    {% comment %} <input type="text" name="firstname" id="firstname" value="" class="input"> {% endcomment %}
+                    {{user_form.first_name}}
+                </div>
+                <div class="inputdiv">
+                    <label for="lastname">LastName</label><br>
+                    {% comment %} <input type="text" name="lastname" id="lastname" value="" class="input"> {% endcomment %}
+                    {{user_form.last_name}}
+                </div>
+                <div class="inputdiv">
+                    <label for="email">Email</label><br>
+                    {% comment %} <input type="text" name="email" id="email" value="" class="input"> {% endcomment %}
+                    {{user_form.email}}
+                </div>
+                <div class="inputdiv">
+                    <label for="phonenumber">Phonenumber</label><br>
+                    {% comment %} <input type="text" name="phonenumber" id="phonenumber" value="" class="input"> {% endcomment %}
+                    {{profile_form.phone_number}}
+                </div>
+                <div class="inputdiv">
+                    <label for="location">Location</label><br>
+                    {% comment %} <input type="text" name="location" id="location" value="" class="input"> {% endcomment %}
+                    {{profile_form.location}}
+                </div>
+                <div class="inputdiv">
+                    <label for="gender">Gender</label><br>
+                    {% comment %} <select name="sex" id="sex" value="">
+                        <option value=""></option>
+                        <option value="Male">Male</option>
+                    </select> {% endcomment %}
+                    {{profile_form.sex}}
+                </div>
+            </div>
+            <div class="userbio">
+                <label for="bio">About me</label><br>
+                {% comment %} <textarea name="bio" id="bio" class="textarea"></textarea> {% endcomment %}
+                {{profile_form.about}}
+            </div>
+            <div class="button">
+                <button>Update_profile</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
+

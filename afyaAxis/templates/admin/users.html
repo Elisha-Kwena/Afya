@@ -1,0 +1,57 @@
+{% extends 'admin/admin_layout.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include 'admin/sidebarleft.html' %}
+<div class="mainbarcentre">
+    <div class="mainbarhead">
+        <div class="navleft">
+            <a class="dash" href="">Dashboard</a>
+            <a class="web" href=""><i class="fa-solid fa-globe"></i>View Website</a>
+        </div>
+        <div class="navright">
+            <a href=""><i class="fa-solid fa-message"></i><span>0</span></a>
+            <a href=""><i class="fa-solid fa-bell"></i><span>0</span></a>
+            <a href=""><img src="{{ admin_profile.profile_picture.url}}" alt=""></i></a>
+        </div>
+    </div>
+    <div class="maincontents">
+        <div class="contentsleft beneficiaries">
+            <div class="ad">
+                <h1>Afya Axis Beneficiaries</h1>
+            </div>
+            <div class="usersdiv">
+                {%for user in users%}
+                <div class="user">
+                                <div class="userpic">
+                                    <img src="{{ user.profile_picture.url }}" alt="">
+                                </div>
+                                <div class="username">
+                                    <h2>{{user.user.first_name}} {{user.user.last_name}}</h2>
+                                </div>
+                                <div class="options">
+                                    <ul>
+                                        <li><i class="fa-solid fa-ellipsis-vertical"></i>
+                                        <ul class="drop">
+                                            <li><a href="">
+                                                <i class="fa-solid fa-message"></i>
+                                                <h3>Message {{user.user.first_name}}</h3>
+                                            </a></li>
+                                            <li><a href="">
+                                                <i class="fa-solid fa-ban"></i>
+                                                <h3>Ban {{user.user.first_name}}</h3>
+                                            </a></li>
+                                        </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+        {% include 'admin/contentsright.html' %}
+    </div>
+</div>
+{% endblock %}

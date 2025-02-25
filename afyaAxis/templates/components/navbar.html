@@ -1,0 +1,56 @@
+{%load static%}
+<header>
+    <div class="logo" id="logo">
+        <a href="">
+            <img src="{% static '/images/logo.png'%}" alt="">
+            <h1>AFYA - AXIS</h1>
+        </a>
+    </div>
+    <nav id="navbar">
+        <div class="left">
+            <button id="close"><ion-icon name="grid"></ion-icon></button>
+            <button id="open"><ion-icon name="grid"></ion-icon></button>
+            {%if user.is_authenticated%}
+            <div class="searchbox">
+                <form method="GET" action="{% url 'global_search' %}">
+                    <input name="query" id="inputbox" type="text" id="search" placeholder="Search by doctor_name clinic service or specialization.." autocomplete ="off">
+                    <span id="openinput"><ion-icon  name="search"></ion-icon></span>
+                    <button id="submitbtn" class="submit" type="submit"><ion-icon  name="search"></ion-icon></button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        <div class="right">
+            {% if user.is_authenticated %}
+            <a class="notify" href="">
+                <ion-icon name="notifications"></ion-icon>
+                <h2>Notifications</h2>
+                <span>0</span>
+            </a>
+            <a href="{% url 'profile' %}">
+                {% if user.profile.profile_picture %}
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture">
+                {% else %}
+                <ion-icon name="person"></ion-icon>
+                {% endif %}
+                
+                <h2>{{user.username}}</h2>
+            </a>
+            {% else %}
+            <a href="{% url 'register' %}">
+                <h2>Sign up</h2>
+            </a>
+            <a href="{% url 'login' %}">
+                <h2>Login</h2>
+            </a>
+            {% endif %}
+            {%if user.is_authenticated%}
+            <select name="" id="language">
+                <option value="">English</option>
+                <option value="">Kiswahili</option>
+                <option value="">Arabic</option>
+            </select>
+            {% endif %}
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,155 @@
+{% extends 'admin/admin_layout.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include 'admin/sidebarleft.html' %}
+<div class="mainbarcentre">
+    <div class="mainbarhead">
+        <div class="navleft">
+            <a class="dash" href="">Dashboard</a>
+            <a class="web" href=""><i class="fa-solid fa-globe"></i>View Website</a>
+        </div>
+        <div class="navright">
+            <a href=""><i class="fa-solid fa-message"></i><span>0</span></a>
+            <a href=""><i class="fa-solid fa-bell"></i><span>0</span></a>
+            <a href=""><img src="{{ admin_profile.profile_picture.url}}" alt=""></i></a>
+        </div>
+    </div>
+    <div class="maincontents">
+        <div class="contentsleft">
+            <div class="middlecontainer">
+                <div class="leftdiv">
+                    <h2>Welcome</h2>
+                    <h1>{{ admin_user.first_name }} {{ admin_user.last_name }}</h1><hr>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing  elit. Unde, veniam. Veniam consectetur quae nemo quidem  non earum natus harum vel, enim sit ipsa eveniet libero  maiores vero eligendi id eum?</p>
+                </div>
+            </div>
+            <!-- <div class="newstaff">
+                <a href="">New Admin</a>
+                <a href="">New Doctor</a>
+                <a href="">New Clinic</a>
+            </div> -->
+            <div class="appointments">
+                <div class="appdiv">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div class="side">
+                        <h2>{{appointments_count}}</h2>
+                        <h3>Appointments made today</h3>
+                        <h4>Today</h4>
+                    </div>
+                </div>
+                <div class="appdiv">
+                    <i class="fa-solid fa-check"></i>
+                   <div class="side">
+                        <h2>{{appointments_count}}</h2>
+                        <h3>Approved appointments</h3>
+                        <h4>Today</h4>
+                   </div>
+                </div>
+                <div class="appdiv">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <div class="side">
+                        <h2>{{doctors_count}}</h2>
+                        <h3>Available Doctors</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="moredetails">
+                <div class="more">
+                    <h1>users</h1>
+                    <h1>Statistics</h1>
+                </div>
+                <div class="morebox">
+                    <div class="users">
+                        {% for user in users%}
+                        <div class="user">
+                            <div class="userpic">
+                                <img src="{{user.profile_picture.url}}" alt="">
+                            </div>
+                            <div class="username">
+                                <h2>{{ user.user.username }}</h2>
+                            </div>
+                            <div class="options">
+                                <ul>
+                                    <li><i class="fa-solid fa-ellipsis-vertical"></i>
+                                    <ul class="drop">
+                                        <li><a href="">
+                                            <i class="fa-solid fa-message"></i>
+                                            <h3>Message {{ user.user.username }}</h3>
+                                        </a></li>
+                                        <li><a href="">
+                                            <i class="fa-solid fa-ban"></i>
+                                            <h3>Ban {{ user.user.username }}</h3>
+                                        </a></li>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="statleft">
+                                <div class="icon">
+                                    <i class="fa-solid fa-truck-medical"></i>
+                                </div>
+                                <div class="statinfo">
+                                    <h2>Total Ambulance request</h2>
+                                    <h3>Today</h3>
+                                </div>
+                            </div>
+                            <div class="statright">
+                                <h1>40</h1>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="statleft">
+                                <div class="icon">
+                                    <i class="fa-solid fa-ban cancel"></i>
+                                </div>
+                                <div class="statinfo">
+                                    <h2>Missed or cancelled appointments</h2>
+                                </div>
+                            </div>
+                            <div class="statright">
+                                <h1>40</h1>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="statleft">
+                                <div class="icon">
+                                    <i class="fa-solid fa-hourglass-start"></i>
+                                </div>
+                                <div class="statinfo">
+                                    <h2>Avg. Appointment time per patient</h2>
+                                </div>
+                            </div>
+                            <div class="statright">
+                                <h1>40</h1>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <div class="statleft">
+                                <div class="icon">
+                                    <i class="fa-solid fa-truck-medical"></i>
+                                </div>
+                                <div class="statinfo">
+                                    <h2>Total Ambulance request</h2>
+                                    <h3>Today</h3>
+                                </div>
+                            </div>
+                            <div class="statright">
+                                <h1>40</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'admin/contentsright.html' %}
+    </div>
+</div>
+{% endblock %}

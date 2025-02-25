@@ -1,0 +1,2804 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+button{
+    cursor: pointer;
+}
+body{
+    width: 100%;
+
+}
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+}
+header .logo{
+    width: 24%;
+    height: 80px;
+    overflow-x: hidden;
+    transition: .5s;
+}
+
+header .logo a img{
+    width: 80px;
+    margin-left: 0;
+}
+header .logo a{
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 40px;
+    text-decoration: none;
+}
+header .logo a h1{
+    font-size: 30px;
+    font-family: "Alfa Slab One", serif;
+    color: #000000;
+    text-wrap: nowrap;
+}
+header nav{
+    width: 76%;
+    height: 80px;
+    background-color: #0c8de0;
+    /* background-color: transparent; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: .5s;
+}
+nav .left button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+nav .left button ion-icon{
+    font-size: 25px;
+    fill: rgb(0, 0, 0);
+    display: block;
+    margin: 0 auto;
+
+}
+nav .left .searchbox form .submit{
+    padding: 5px;
+    display: none;
+}
+nav .right{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+nav .right a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    position: relative;
+    margin: 0 10px;
+}
+nav .right a ion-icon{
+    font-size: 25px;
+    fill: azure;
+}
+nav .right .notify ion-icon{
+    fill: yellow;
+}
+nav #open{
+    display: none;
+}
+nav .right .notify span{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    color: #000000;
+    top: -5px;
+    left: -2px;
+    align-items: center;
+    justify-content: center;
+}
+nav .right img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+nav .accounts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+nav .accounts a{
+    padding: 10px 20px;
+    border: 2px solid #f5f5f5;
+    border-radius: 20px;
+    transition: .5s;
+}
+nav .accounts a:hover h2{
+    color: #0c8de0;
+}
+nav .accounts a:hover{
+    background-color: #ffffff;
+    border: 2px solid #0c8de0;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0,0.7);
+}
+
+nav .accounts h2{
+    color: azure;
+    font-size: 16px;
+    transition: .5s;
+}
+nav .right a h2{
+    font-size: 18px;
+    color: #ffffff;
+}
+nav .right select{
+    padding:7px  10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    width:120px
+}
+
+nav .left{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+}
+nav .left .searchbox form{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    padding:3px 4px;
+}
+nav .left .searchbox form ion-icon{
+    font-size: 25px;
+    fill: rgb(0, 0, 0);
+}
+nav .left .searchbox form span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+nav .left .searchbox form input{
+    position: relative;
+    width: 500px;
+    width: 0;
+    border: 2px solid azure;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 18px;
+    padding: 0;
+    transition: .5s;
+    background-color: transparent;
+}
+
+nav .left button ion-icon{
+    fill: #ffffff;
+    font-size: 40px;
+
+}
+nav .left .searchbox form input::placeholder{
+    color: #000000;
+    font-size: 18px;
+}
+nav .left .searchbox form input:focus{
+    outline: none;
+}
+#suggestionBox {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background: #f0f0f0;
+}
+/* sidebar=================================== */
+
+main{
+    width:100%;
+    padding-top: 80px;
+}
+main .sidebar{
+    width: 24%;
+    background-color: #007f3c;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    transition: .5s;
+}
+main .sidebar .home{
+    /* width: 100%; */
+    background-color: #f9be1a;
+}
+main .sidebar .home a{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 25px;
+    overflow: hidden;
+    padding: 15px 20px;
+}
+main .sidebar .home a ion-icon{
+    font-size: 35px;
+    fill: rgb(0, 0, 0,0.7);
+}
+main .sidebar .home a h2{
+    font-size: 18px;
+    color: rgb(0, 0, 0,0.7);
+    text-wrap: nowrap;
+}
+main .sidebar .links{
+    overflow-y: scroll;
+    height: 100%;
+    padding-bottom: 40px;
+}
+main .sidebar .links::-webkit-scrollbar{
+    width: 7px;
+    background-color: rgb(212, 212, 212);
+    padding: 2px;
+}
+main .sidebar .links::-webkit-scrollbar-thumb{
+    
+    background-color: #0c8de0;
+    border-radius: 10px;
+}
+main .sidebar .home img,
+main .sidebar .links img{
+    width: 40px;
+    height: 40px;
+}
+main .sidebar .links ul{
+    list-style-type: none;
+}
+main .sidebar .links ul li{
+    display: block;
+}
+main .sidebar .links ul li:nth-child(1){
+    margin-top: 30px;
+}
+main .sidebar .links ul li a,
+main .sidebar .links ul li .link{
+    display: flex;
+    padding: 10px 20px;
+    align-content: center;
+    justify-content:left;
+    gap: 25px;
+    margin-bottom: 10px;
+    position: relative;
+}
+main .sidebar .links ul li .dropdown{
+    position: relative;
+    /* background-color: rgb(54, 54, 54); */
+    /* transform: translateY(-90px); */
+    top: -50px;
+    overflow: hidden;
+    display: none;
+}
+main .sidebar .links ul li:hover .dropdown{
+    /* transform: translateY(50px); */
+    display: block;
+    margin-left: 80px;
+}
+main .sidebar .links ul li:hover ion-icon{
+    transform: rotate(90deg);
+   
+}
+
+main .sidebar .links ul li .dropdown li img{
+    width: 20px;
+    height: 20px;
+}
+main .sidebar .links ul li .dropdown li a{
+    padding: 5px ;
+    z-index: 10;
+}
+.sidebar .icon{
+    display: block;
+}
+main .sidebar .links ul li .dropdown li h3{
+    font-size: 14px;
+    color: #0c8de0;
+}
+main .sidebar .links ul li .link ion-icon{
+    position: absolute;
+    float: right;
+    right: 15px;
+    font-size: 30px;
+    transition: .5s;
+}
+main .sidebar .links h2{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    color:azure ;
+    text-wrap: nowrap;
+}
+/* main===================================================== */
+main .mainbar{
+    width: 76%;
+    margin-left: 24%;
+    transition: .5s;
+}
+.mainbar h1{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 45px;
+    font-family: "Alfa Slab One", serif;
+    color: #007f3c;
+}
+.mainbar .herosection{
+    margin-top: 50px;
+    width: 100%;
+}
+.mainbar .herosection .hero{
+    width: 80%;
+    display: block;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mainbar .herosection .hero .heroleft{
+    width: 50%;
+    padding-right: 20px;
+}
+.mainbar .herosection .hero .heroleft p{
+    font-size: 20px;
+}
+.mainbar .herosection .hero .heroleft p span{
+    font-weight: 900;
+    color: #0c8de0;
+}
+.mainbar .herosection .hero .heroright{
+    width: 50%;
+}
+.mainbar .herosection .hero .heroright img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.mainbar .about{
+    width: 100%;
+    margin-top: 150px;
+}
+.about-us{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+.about-us p{
+    font-size: 18px;
+}
+.about-us h2{
+    font-size: 35px;
+    font-family: "Alfa Slab One", serif;
+    color: #007f3c;
+}
+.gallery{
+    width: 100%;
+    margin-top: 150px;
+}
+.imagebox{
+    width: 80%;
+    display: block;
+    margin:  0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.imagebox .image{
+    width: 45%;
+    position: relative;
+    overflow: hidden;
+}
+.imagebox .image:hover h2{
+    bottom:100px;
+    transition: .5s;
+}
+.gallery h1{
+    margin-bottom: 50px;
+}
+.imagebox .image:hover img{
+    transform: scale(1.3);
+    opacity: 0.6;
+}
+.imagebox .image img{
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    transition: .5s;
+}
+.image h2{
+    color: #e90000;
+    font-weight: 900;
+    position: absolute;
+    bottom: -40px;
+    text-align: center;
+    left: 20%;
+}
+.faqs{
+    width: 100%;
+    margin-top: 150px;
+}
+.faqs h2{
+    color: #007f3c;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 900;
+}
+.faqsdiv{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 5px;
+    
+}
+.faq-item{
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+.settings{
+    margin-top: 60px;
+}
+.exit{
+    margin-bottom: 50px;
+}
+.settings img,
+.exit img{
+    width: 30px;
+    height: 30px;
+}.settings,
+.exit{
+    width: 100%;
+}
+.settings a,
+.exit a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 30px;
+    padding:10px 20px ;
+}
+.settings h2,
+.exit h2{
+    text-transform: capitalize;
+    font-size: 18px;
+    color: #000000;
+}
+/* profile page =========================== */
+.profile{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.profile-container{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+.profile-container h2{
+    text-align: center;
+    font-size: 24px;
+    margin-top:5px;
+}
+.profilepicture{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 20px;
+}
+.profilepicture img{
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid rgb(133, 133, 133);
+}
+.details{
+    width: 100%;
+    width: 96.5%;
+    display: block;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 0;
+}
+.detail{
+    width: 48%;
+    border: 1px solid black;
+    padding:5px 10px;
+    border-radius: 3px;
+}
+.detail h2{
+    text-align: left;
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0c8de0;
+}
+.detail h3{
+    text-align: left;
+    margin-top: 0;
+    color: #000000;
+    margin-left: 10px;
+}
+.profile-container .about{
+    width: 96.5%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 4px;
+}  
+
+.about h2{
+    margin-top: 5px;
+    text-align: left;
+    font-size: 18px;
+    color: #0c8de0;
+}
+.profile-container .about p{
+    margin-top: 5px;
+    text-align: left;
+    font-size: 14px;
+}
+.update{
+    padding:  10px 10px;
+}
+.update a{
+    background-color: #0c8de0;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    display: block;
+    width: 300px;
+    color: aliceblue;
+    font-weight: 900;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+/* profile update+++++++++++++++++++++++++++++++++++++ */
+.profile{
+    width: 100%;
+}
+.updateprofile{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+.updateprofile .profile-header{
+    width: 100%;
+    
+}
+.updateprofile .profile-header h2{
+    text-align: center;
+
+}
+.updateprofile form{
+    width: 100%;
+    margin-top: 5px;
+    padding:5px 20px;
+}
+.updateprofile form .profilepicture .current{
+    width: 200px;
+    height: 200px;
+}
+.updateprofile form .profilepicture .current img{
+    width: 100%;
+    height: 100%;
+}
+.updateprofile form .profilepicture{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 50px;
+}
+.updateprofile form .profilepicture .new img{
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.updateprofile form .profilepicture .new input{
+    display: none;
+}
+.updateprofile form .profilepicture .new label{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+}
+.updateprofile form .profilepicture .new label h2{
+    font-size: 14px;
+    color: #0c8de0;
+}
+.userbio{
+    width: 100%;
+    padding:4px  15px;
+}
+.userdetails{
+    width: 100%;
+    padding:4px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.userdetails .inputdiv{
+    width: 48%;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    background-color: grey;
+}
+.userbio label,
+.userdetails .inputdiv label{
+    color: #0c8de0;
+    padding: 5px 0 0;
+    width: 100%;
+    display: block;
+    border: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.userdetails .inputdiv .inputcontbox{
+    width:100%;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 14px;
+    display: block;
+    border: 1px solid black;
+    padding: 15px 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.userdetails .inputdiv input{
+    width:100%;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 14px;
+    display: block;
+    border: 1px solid black;
+    padding: 15px 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.userdetails .inputdiv .select-control{
+    width: 100%;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 14px;
+    padding: 6px 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.userbio textarea:focus,
+.userdetails .inputdiv .input:focus{
+    outline: none;
+}
+
+.userbio .textarea{
+    font-size: 14px;
+    padding: 6px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    max-height: 100px;
+    height: 70px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.button{
+    width: 100%;
+    padding:10px 13px;
+}
+.button button{
+    width: 50%;
+    background-color: #0c8de0;
+    border: none;
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+/* appointment ========================================== */
+
+.appointment{
+    width: 100%;
+    padding-top: 10px;
+}
+.appointment .appointmentbox{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0,0.5);
+}
+.appointmentbox h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+}
+.appointmentbox h2{
+    font-size: 16px;
+}
+.appointmentbox p{
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+.appointmentbox form{
+    width: 100%;
+    padding: 20px 30px;
+}
+.appointmentbox form .form-group{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.appointmentbox form .form-group input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    color: #000000;
+    border-radius: 3px;
+    background-color: transparent;
+    font-family: 'Times New Roman', Times, serif;
+}
+.appointmentbox form .form-group label{
+    padding: 10px;
+    border-radius: 3px;
+    color: #0c8de0;
+    font-size: 16px;
+}
+.form-group .session-type{
+    width: 100%;
+}
+.form-group .session-type .type{ 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.form-group .session-type .type input{
+    width: unset;
+}
+.form-group .session-type .type label{
+    font-size: 20px;
+}
+.form-group textarea{
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 16px;
+    max-height: 70px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.appointmentbox form button{
+    background-color: #0c8de0;
+    color: #ffffff;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+/* error page=============================== */
+.appointment .errorbox{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    /* min-height: 70vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.error img{
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+}
+.error h1{
+    text-align: center;
+    margin-top: 50px;
+    color: red;
+    font-size: 50px;
+}
+.error p{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #e90000;
+}
+/* doctor details list============================== */
+.doctorslist{
+    width: 100%;
+    padding-top: 40px;
+}
+.doctorslistbox{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+.doctordiv{
+    width: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0,0.3);
+    margin-bottom: 20px;
+}
+.doctordivleft{
+    width: 40%;
+    border-right: 1px solid #000000;
+    padding:5px 20px;
+}
+.doctordivleft .doctorprofile{
+    width: 100%;
+
+}
+.doctordivleft .doctorprofile img{
+    width: 50%;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.docdata{
+    width: 100%;
+    padding-bottom: 10px;
+}
+.docdata h2{
+    color: #0c8de0;
+}
+.docdata p{
+    font-size: 14px;
+    color: rgb(174, 174, 174);
+}
+.docdata p span{
+    font-size: 16px;
+    color: #000000;
+}
+.doctordivright{
+    width: 60%;
+    padding: 5px 20px;
+}
+.doctordivright h2{
+    color: #007f3c;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.doctordivright  p{
+    font-size: 16px;
+}
+.doctordivright .doctordivbuttons{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.doctordivright .doctordivbuttons form{
+    width: 50%;
+   
+}
+.doctordivright .doctordivbuttons form button{
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    color: #ffffff;
+    background-color: #007f3c;
+    padding: 6px;
+    border: none;
+    border-radius: 3px;
+}
+.doctordivright .doctordivbuttons form .view{
+    background-color: #0c8de0;
+}
+.doctorslist .new{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+.doctorslist .new a{
+    color: #ffffff;
+    background-color: #0c8de0;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 10px 60px;
+    border-radius: 5px;
+}
+/* doctor registration form ================================ */
+.regform{
+    width: 100%;
+    padding-top: 20px;
+}
+.doctorsform{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+.doctorsform .top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.doctorsform .top img{
+    width: 130px;
+}
+.doctorsform .top h1{
+    font-size: 30px;
+    color: #007f3c;
+}
+.doctorsform form{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+}
+.doctorsform form .inputcontainer{
+    width: 100%;
+    padding: 3px 10px;
+}
+.doctorsform form .inputcontainer .select-control{
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.doctorsform form .inputcontainer input{
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.doctorsform form label{
+    font-size: 16px;
+    color: #0c8de0;
+}
+.doctorsform form .inputcontainer .textarea{
+    width: 100%;
+    height: 140px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.doctorsform form .inputcontainer .select{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 50px;
+}
+/* .doctorsform form .inputcontainer .select input{
+    display: none;
+} */
+.doctorsform form .inputcontainer .select img{
+    width: 40px;
+}
+.inputcontainer button{
+    width: 100%;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007f3c;
+}
+
+
+/* octor detailspage================================ */
+.docprofile{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profilecontainer img{
+    width: 30px;
+}
+.profilecontainer{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+.profilecontainer .topside{
+    width: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.profilecontainer .topside .imageside{
+    width: 50%;
+    padding: 20px;
+    padding-top: 0;
+}
+.profilecontainer .topside .imageside img{
+    width: 80%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5px;
+}
+.profilecontainer .topside .detailside{
+    width: 50%;
+    margin-left: 50px;
+}
+.profilecontainer .topside .detailside h1{
+    font-size: 40px;
+    color: #007f3c;
+    font-weight: 900;
+    margin-bottom: 50px;
+    text-align: left;
+}
+.profilecontainer .topside .detailside h2{
+    font-size: 18px;
+    
+    margin-bottom: 10px;
+    color: #000000;
+}
+.profilecontainer .topside .detailside h2 span{
+    color: #0c8de0;
+    font-size: 16px;
+}
+.profilecontainer .topside .detailside .linksbox {
+    width: 100%;
+    margin-top: 20px;
+}
+.profilecontainer .topside .detailside .linksbox h1{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    text-align: left;
+    color: #007f3c;
+}
+.profilecontainer .topside .detailside .linksbox .links{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    gap: 30px;
+}
+.profilecontainer .topside .detailside .linksbox .links ion-icon{
+    font-size: 30px;
+}
+.twitter,
+.facebook,
+.linkedin{
+    fill: #0c8de0;
+}
+.whatsapp{
+    fill: #08bf5e;
+}
+.profession{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.profession h4{
+    font-size: 25px;
+    font-family: "Alfa Slab One", serif;
+    margin-bottom: 10px;
+    color: #007f3c;
+    text-align: left;
+}
+.profession h2{
+    font-size: 25px;
+    color: #0c8de0;
+    margin-bottom: 10px;
+}
+
+.ratings .rates ion-icon{
+    font-size: 35px;
+}
+.ratings .rates .rate:nth-child(1),
+.ratings .rates .rate:nth-child(2),
+.ratings .rates .rate:nth-child(3){
+    fill: rgb(247, 247, 36);
+}
+.middle{
+    width: 100%;
+  
+    padding: 20px;
+}
+.middle .residential{
+    width: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+}
+.middle .residential h1{
+    margin-bottom: 15px;
+    font-size: 30px;
+    text-align: left;
+    color: #007f3c;
+}
+.middle .residential h2{
+    color:#0c8de0;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.middle .residential .residentialdetail{
+    width: 40%;
+}
+.middle .residential h2 span{
+    color:#000000;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.middle .aboutdoc{
+    width: 60%;
+}
+.reviews{
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    overflow: scroll;
+}
+.reviews h1{
+    text-align: left;
+    font-size: 30px;
+    color: #007f3c;
+    
+}
+.reviews .reviewcards{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: scroll;
+    gap: 20px;
+}
+.reviewcards .card{
+    max-width: 25%;
+    min-width: 25%;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0,0.2);
+    padding: 5px;
+    height: 380px;
+    background-color: #e4e4e4;
+}
+.reviewcards .card .patientimage{
+    width: 100%;
+    height: 200px;
+    background-color: white;
+}
+.reviewcards .card .patientimage img{
+    width: 100%;
+    height: 100%;
+    object-position: top;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.reviewcards .card h2{
+    color: #007f3c;
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.reviewcards .card p{
+    font-size: 14px;
+}
+.reviewcards .card .day{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+.reviewcards .card .day ion-icon{
+    color: #0c8de0;
+}
+.reviewcards .card .day h2{
+    font-size: 14px;
+}
+
+/* chatbot==================================== */
+.chatbot{
+    width:100%;
+}
+.mainbarnav{
+    position: relative;
+}
+.mainbarnav .sidenavbar{
+    position: absolute;
+    z-index: 5;
+    left: 20%;
+    top: 10px;
+    border-radius: 15px;
+    width: 380px;
+    height: 65vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0,0.3);
+    padding: 10px;
+    transform: scale(0);
+    transition: .5s;
+}
+.sidenavbar .chatsboxcontainer{
+    max-height: 60vh;
+
+}
+.sidenavbar .chatsboxcontainer .mychats{
+    max-height: 60vh;
+    overflow-Y: scroll;
+    padding-top: 50px;
+}
+.sidenavbar .chatsboxcontainer .mychats::-webkit-scrollbar{
+    width: 7px;
+    background-color: rgb(143, 143, 143);
+    border-radius: 10px;
+}
+.sidenavbar .chatsboxcontainer .mychats::-webkit-scrollbar-thumb{
+    width: 6px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+.sidenavbar .chatsboxcontainer .chatstop{
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #8e8e8e;
+    padding-right: 10px;
+    border-radius: 10px;
+    left: 4px;
+    top: 4px;
+    gap: 10px;
+    position: fixed;
+}
+.sidenavbar .chatsboxcontainer .chatstop button{
+   background-color: transparent;
+   border: none;
+   color: #0c8de0;
+   
+}
+.sidenavbar .chatsboxcontainer .chatstop div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+.sidenavbar .chatsboxcontainer .chatstop ion-icon{
+    font-size: 40px;
+}
+.sidenavbar .chatsboxcontainer .chatstop h1{
+    color: #0c8de0;
+    font-size: 20px;
+}
+.sidenavbar .chatsboxcontainer .chat {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+.sidenavbar .chatsboxcontainer .chat h3{
+    color: #000000;
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.sidenavbar .chatsboxcontainer .chat a{
+    color: #8e8e8e;
+    font-weight: 900;
+    padding: 5px;
+    padding-left: 10px;
+    display: block;
+   
+}
+.mainbarnav .maintop{
+    width: 100%;
+}
+
+.mainbarnav .maintop  h1{
+    text-align: center;
+    font-size: 25px;
+}
+.mainbarnav .chatbody{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    height: 82vh;
+    position: relative;
+}
+.mainbarnav .chatbody .chatsbox{
+    width: 100%;
+    height: 58vh;
+    overflow-y: scroll;
+}
+.mainbarnav .chatbody .chatsbox::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.mainbarnav .chatbody .chatsbox .botmessage{
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+.mainbarnav .chatbody .chatsbox .botmessage .bot-message{
+    background-color: rgb(71, 71, 68,0.8);
+    max-width: 90%;
+    border-radius: 10px;
+    padding: 10px;
+    border-bottom-left-radius: 0;
+    
+}
+.mainbarnav .chatbody .chatsbox .userMessage{
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: right;
+    margin-bottom: 10px;
+}
+.mainbarnav .chatbody .chatsbox .userMessage .user-message{
+    max-width: 80%;
+    background-color: rgb(128, 128, 128,0.3);
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+}
+.chatbody form{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+.chatbody form .inputdiv{
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgb(210, 210, 210);
+    position: relative;
+}
+.chatbody form textarea{
+    width: 100%;
+    font-family: ti;
+    border-radius: inherit;
+    max-height: 100px;
+    height: 100px;
+    border: none;
+    background-color: transparent;
+    padding: 15px;
+    font-size: 18px;
+}
+.chatbody form textarea::placeholder{
+    color: #000000;
+}
+textarea::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+textarea:focus{
+    outline:none;
+}
+.chatbody form .inputdiv .chatcontrols{
+    width: 100%;
+    padding: 0px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.chatbody form .inputdiv .chatcontrols label,
+.chatbody form .inputdiv .chatcontrols button{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    transition: .5s;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(153, 153, 153);
+}
+.chatbody form .inputdiv .chatcontrols .left #charts{
+    width: unset;
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+    padding: 0 20px;
+    font-family: tim;
+    font-size: 20px;
+    font-weight:900;
+}
+.chatbody form .inputdiv .chatcontrols .left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}.chatbody form .inputdiv .chatcontrols .left #search,
+.chatbody form .inputdiv .chatcontrols .left .attachment{
+    margin-right: 20px;
+}
+.chatbody form .inputdiv .chatcontrols label ion-icon,
+.chatbody form .inputdiv .chatcontrols button ion-icon{
+    font-size: 30px;
+    transition: .5s;
+}
+.chatbody form .inputdiv .chatcontrols .right{
+    position: relative;
+}
+.chatbody form .inputdiv .chatcontrols .right #upload:hover{
+    background-color: #000000;
+}
+.chatbody form .inputdiv .chatcontrols .right #upload:hover ion-icon{
+    color: #ffffff;
+}
+.bot-message .loading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.bot-message .loading .loader{
+    width: 10px;
+    height: 10px;
+    background-color: #000000;
+    border-radius: 50%;
+    animation-name: loading;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-direction: normal;
+}
+@keyframes loading {
+    0%{
+        opacity: 0.2;
+        transform: translateY(3px);
+    }
+    25%{
+        opacity: 0.4;
+        transform: translateY(-3px);
+    }
+    50%{
+        opacity: 0.6;
+        transform: translateY(3px);
+    }
+    75%{
+        opacity: 0.8;
+        transform: translateY(-3px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(3px);
+    }
+}
+
+.bot-message .loading .loader:nth-child(1){
+    animation-delay: 0.2s;
+}
+.bot-message .loading .loader:nth-child(2){
+    animation-delay: 0.4s;
+}
+.bot-message .loading .loader:nth-child(3){
+    animation-delay: 0.6s;
+}
+
+
+/* search results=========================== */
+.results{
+    width: 100%;
+}
+.results .resultsdiv{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+.results .resultsdiv .resultstop{
+    width: 100%;
+    padding: 10px;
+}
+.results .resultsdiv .resultstop p{
+    font-size: 24px;
+    text-align: center;
+}
+.results .resultsdiv .resultstop p span{
+    color: #0c8de0;
+}
+.resultsontainer{
+    width: 100%;
+    background-color: rgb(246, 33, 0);
+    padding: 10px ;
+    border-radius: 5px;
+}
+.resultsontainer p{
+    font-size: 20px;
+}
+.resultsontainer2{
+    width: 100%;
+    padding: 0 10px;
+}
+.resultsontainer2 .doctorsresult{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:10px 10px;
+}
+.resultsontainer2 .doctorsresult .doctorinfo{
+    width: 49.3%;
+    max-width: 49.5%;
+    border: 1px solid #000000;
+    padding: 10px;
+    border-radius: 5px;
+}
+.resultsontainer2 .doctors h1{
+    color: #0c8de0;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+.resultsontainer2 .doctors{
+    margin-bottom: 0px;
+}
+.resultsontainer2 .doctorsresult .doctorinfo a{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content:left ;
+    gap: 50px;
+}
+.resultsontainer2 .doctorsresult .doctorinfo a .imageside{
+    width: 20%;
+    height: 100px;
+    
+}
+.doctorinfo a .imageside img{
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 2px solid #0c8de0;
+}
+.doctorinfo a .detailsside{
+    width: 80%;
+}
+.doctorinfo a .detailsside h2{
+    color: #007f3c;
+    font-size: 20px;
+}
+.doctorinfo a .detailsside h3{
+    color: #000000;
+    font-size: 14px;
+}
+.doctorinfo a .detailsside h3 span{
+    color: #0c8de0;
+    font-size: 16px;
+}
+/* clinics page++++++++++++++++++++++++++++++++++ */
+.clinicpage{
+    width: 100%;
+    padding-top: 20px;
+
+}
+.servicesdiv{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    border: 2px solid #007f3c;
+    border-radius: 5px;
+    z-index: 5;
+    transition: .5s;
+    transform: scale(0);
+
+}
+.servicesdiv .viewmore{
+    width: 100%;
+    padding: 5px 3px;
+    margin-top: 0;
+}
+.servicesdiv .viewmore button{
+    background-color: red;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    font-weight: 900;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 50px;
+}
+.clinicdetails{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.clinicbanner{
+    width: 50%;
+    height: 90vh;
+}
+.clinicbanner img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: top;
+}
+.clinicabout{
+    width: 50%;
+    height: 100%;
+    padding:0 10px;
+    position: relative;
+}
+.clinicabout .top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    gap: 20px;
+    margin-bottom: 10px;
+    border: 5px solid #007f3c;
+    padding: 5px;
+    border-radius: 10px;
+}
+.clinicabout .top img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.clinicabout .top h1{
+    color: #0c8de0;
+    font-size: 30px;
+    font-family: "Alfa Slab One", serif;
+    padding-top: 0;
+}
+.clinicabout .detailsbox{
+    width: 100%;
+    
+}
+.clinicabout .detailsbox h1{
+    font-size: 25px;
+    color: #0c8de0;
+    padding-top: 0;
+}
+.clinicabout .servicesdiv .services,
+.clinicabout .detailsbox .services{
+    width: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 0px;
+    flex-wrap: wrap;
+    border: 3px solid #007f3c;
+    padding:5px  2px;
+    border-radius: 10px;
+    gap: 5px;
+}
+.clinicabout .servicesdiv .services .servicecontainer,
+.clinicabout .detailsbox .services .servicecontainer{
+    width: 48.5%;
+    max-width: 49%;
+    height: 420px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    
+}
+.clinicabout .servicesdiv .services .servicecontainer h3,
+.clinicabout .detailsbox .services .servicecontainer h3{
+    margin-top: 20px;
+    color: #0c8de0;
+    font-weight: 900;
+    font-size: 18px;
+}
+.clinicabout .servicesdiv .services .servicecontainer .serviceratings,
+.clinicabout .detailsbox .services .servicecontainer .serviceratings{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 10px;
+}
+.clinicabout .servicesdiv .services .servicecontainer .serviceratings ion-icon,
+.clinicabout .detailsbox .services .servicecontainer .serviceratings ion-icon{
+    font-size: 40px;
+}
+.serviceratings ion-icon:nth-child(1),
+.serviceratings ion-icon:nth-child(2),
+.serviceratings ion-icon:nth-child(3){
+    fill: yellow;
+}
+.clinicabout .detailsbox .services .viewmore{
+    padding:10px 3px;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+}
+.clinicabout .detailsbox .services .viewmore button{
+    font-size: 24px;
+    background-color: #007f3c;
+    color: azure;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+}.clinicabout .servicesdiv .services .servicecontainer .serviceimage,
+.clinicabout .detailsbox .services .servicecontainer .serviceimage{
+    width: 100%;
+    height: 380px;
+}.clinicabout .servicesdiv .services .servicecontainer, 
+.clinicabout .detailsbox .services .servicecontainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}.clinicabout .servicesdiv .services .servicecontainer .servicedetails,
+.clinicabout .detailsbox .services .servicecontainer .servicedetails{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 100%;
+    transition: .5s ease-in-out;
+    padding: 10px;
+    padding-top: 50px;
+    border-radius: 5px;
+}.clinicabout .servicesdiv .services .servicecontainer:hover .servicedetails,
+.clinicabout .detailsbox .services .servicecontainer:hover .servicedetails{
+    top: 0;
+}
+.servicecontainer .servicedetails h2{
+    color: #007f3c;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.servicecontainer .servicedetails p{
+    font-size: 16px;
+}
+.cliniclocation{
+    width: 100%;
+    border: 3px solid #007f3c;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: top;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.cliniclocation .aboutdiv{
+    width: 49%;
+    border: 1px solid #007f3c;
+    padding: 3px;
+    border-radius: 3px;
+}
+.cliniclocation .aboutdiv p{
+    text-align: justify;
+    font-size: 16px;
+}
+.cliniclocation h2{
+    color: #007f3c;
+    margin-bottom: 10px;
+}
+.cliniclocation h3{
+    color: #0c8de0;
+}
+.cliniclocation h3 span{
+    color: #000000;
+}
+.cliniclocation p{
+    color: #000000;
+    font-size: 16px;
+}
+/* clinics list ========================== */
+.cliniclist{
+    width: 100%;
+}
+.cliniclist .clinicscontainers{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+.cliniclist .clinicscontainers h1{
+    font-family: "Alfa Slab One", serif;
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: #0c8de0;
+}
+.clinics{
+    width: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+.clinics .clinicbox{
+    width: 24%;
+    height: 400px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0,0.4);
+    cursor: pointer;
+}
+.clinics .clinicbox .clinicimage{
+    width: 100%;
+    position: relative;
+   height: 300px;
+   overflow: hidden;
+}
+.clinics .clinicbox .clinicimage .mainlogo{
+    width: 40px;
+    top: 5px;
+    left: 5px;
+    height: 40px;
+    z-index: 10;
+    position: absolute;
+}
+.clinics .clinicbox .clinicimage h2{
+    position: absolute;
+    left: -60%;
+    background-color: #0c8de0;
+    top: 6px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+    transition: .5s;
+}
+.clinics .clinicbox .clinicimage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.clinics .clinicbox:hover .clinicimage h2{
+    left: 50px;
+}
+.clinics .clinicbox h1{
+    color: #007f3c;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 0;
+}
+.clinics .clinicbox .viewbutton{
+    width: 100%;
+}
+.clinics .clinicbox .viewbutton form{
+    width: 100%;
+}
+.clinics .clinicbox .viewbutton button{
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0c8de0;
+    border: none;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+.newclinic{
+    width: 100%;
+    margin-top: 20px;
+    padding:  10px 0 20px;
+}
+.newclinic a{
+    width: 30%;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #007f3c;
+    padding: 10px 40px;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+
+   /*===============maternal and child health=============*/
+
+   /* .home {
+    margin: 0px;
+    margin-top: 20px;
+    height: 70vh;
+    background-image: url(images/hero2-removebg-preview.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+   } */
+    .healthbar{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    .healthbar ul{
+        list-style-type: none;
+    }
+   .class1{
+
+    background-color: #0c8de0;
+   }
+   .home2 h1{
+    color: #0c8de0;
+    text-align: center;
+    margin: 10px;
+    font-size: 1.5em;
+
+   }
+   .home2 p{
+      font-size: 1.2em;
+      margin: 5px;
+      text-justify: distribute-all-lines;
+      text-align: justify;
+
+   }
+   .home2 ul li{
+    font-size: 1.2em;
+    margin: 5px;
+    text-justify: distribute-all-lines;
+    text-align: justify;
+    
+
+   }
+   .home2 .add{
+    height: 20vh;
+
+    display: block;
+    align-items: end;
+    justify-content: space-around;
+   }
+   .measures{
+    margin-top: 80px;
+    height: 40vh;
+    background-color: #0c8de0;
+    margin: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   }
+   .measures .two{
+    font-size: 1.2em;
+    margin: 5px;
+    text-justify: distribute-all-lines;
+    text-align: justify;
+    
+
+   }
+   .measures .two h2{
+
+    color:#007f3c;
+    text-align: center;
+    margin: 10px;
+    font-size: 1.5em;
+
+
+   }
+   .measures ol{
+    padding-left: 20px;
+   }
+   .measures .two ol li{
+    font-size: 1.2em;
+    margin: 5px;
+    text-justify: distribute-all-lines;
+    text-align: justify;
+   }
+
+   /*=========child section=====*/
+
+   .child {
+    display: flex;
+    margin-top: 100px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .child .item1{
+    height: 400px;
+    width: 33%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2rem rgb(0, 0, 0,0.2);
+
+   }
+   .child .item1 img{
+    height:100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+   }
+   .health{
+    height: 150vh;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+
+   }
+   .health h1{
+    color: #0c8de0;
+    text-align: center;
+    margin: 10px;
+    font-size: 1.5em;
+
+   }
+   .health p{
+    font-size: 1.2em;
+    margin: 5px;
+    text-justify: distribute-all-lines;
+    text-align: justify;
+
+
+   }
+   .health .info{
+    width: 100%;
+    display: flex;
+    height: 52vh;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    border: 1px solid #0c8de0;
+    border-radius: 5px;
+    padding: 10px;
+   }
+   .health .info .image img{
+    height: 400px;
+    width: 400px;
+
+   }
+   .health .info .image{
+    width: 40%;
+   }
+   .health .info .new{
+    width: 60%;
+   }
+   .health .info .new h2{
+    color: #0c8de0;
+    text-align: left;
+    margin: 10px;
+    font-size: 1.5em;
+
+   }
+   .health .info .new ol li{
+    font-size: 1.2em;
+    margin: 5px;
+    text-justify: distribute-all-lines;
+    text-align: left;
+   }
+
+   /*==================first aid=============*/
+   .first{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+
+
+   }
+   .first .item1{
+    margin: 0px;
+    margin-top: 100px;
+    height: 60vh;
+    width: 21%;
+    border: 2px solid black;
+    background-color: #0c8de0;
+
+   }
+   .first .item1 .image img{
+    height: 400px;
+    width: 400px;
+   }
+   .first .item3{
+    margin: 0px;
+    margin-top: 100px;
+    height: 60vh;
+    width: 21%;
+    border: 2px solid black;
+    background-color: #0c8de0;
+
+   }
+   .first .item3 .image img{
+    height: 400px;
+    width: 400px;
+   }
+   .first .item3  .info{
+    text-align: center;
+    padding: 40px;
+    font-size: 2em;
+   }
+   .first .item1  .info{
+    text-align: center;
+    padding: 40px;
+    font-size: 2em;
+   }
+
+   /*==========diseases==========*/
+.welcome{
+    margin: auto;
+    height: 100vh;
+}
+ .hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+ 
+}
+.hero .info{
+    width:50%;
+    height: 40vh;
+    background-color: rgba(0, 0, 0, .5);
+
+
+}
+.hero .info h2{
+    color: white;
+    text-align: center;
+    margin: opx;
+    margin: 30px;
+    font-size: 3em;
+    font-weight: 400;
+
+}
+.hero .info P{
+    text-align: center;
+    margin: 10PX;
+    font-size: 1.2em;
+}
+.ded{
+    
+    height: 60vh;
+    width: 100%;
+    background-color: #007f3c;
+}
+.ded h2{
+    text-align: center;
+    color: black;
+    font-size: 3em;
+
+}
+.ded .image{
+  display: flex;
+  margin: 30px;
+  margin-left: 120px ;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  background-color: white;
+  height: 40vh;
+  border: o.5x solid black;
+
+
+}
+.ded .image .item1{
+    margin: 10px;
+    border-radius: 10px;
+    height: 80px;
+    width: 160px;
+    box-shadow:2px 2px 1rem hsl(0, 0%, 70%) ;
+    transition: 0.4s ease;
+
+}
+.ded .image .item1:hover{
+
+    height: 90px;
+    width: 165px;
+    background-color: bisque;
+
+
+
+}
+.ded .image .item1 h3{
+    font-size: 1.3em;
+    font-weight: 600px;
+    text-align: center;
+    margin: 0px;
+    color: #007f3c;
+    margin-top: 5px;
+}
+.ded .image .item1 img{
+    margin: 0px;
+    margin-right: opx;
+}
+
+.malaria{
+    height: 380vh;
+    width: 100%;
+    background-color: hsl(200, 76%, 41%);
+
+}
+.malaria .images{
+    height:400px;
+    display: flex;
+    width:100%;
+    object-fit: cover;
+}
+.malaria .images img{
+    height:400px ;
+    width: 100%;
+}
+.malaria .symptoms{
+    margin: 0px;
+    height: 90vh;
+    width: 100%;
+    background-color:#007f3c;
+    display: flex;
+}
+.malaria .symptoms .data{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 20px;
+    width: 80%;
+    height: 82vh;
+    background-color: aliceblue;
+
+}
+.malaria .symptoms .data .covid{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+}
+.malaria .symptoms .data .covid h4{
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-left: 2px;
+    text-decoration: none;
+}
+.malaria .symptoms .data .covid span{
+    font-size: 1.3em;
+    color: #0c8de0;
+    font-weight: 900;
+    text-decoration: none;
+
+
+}
+.malaria .symptoms .images {
+    width: 20%;
+    height: 40px;
+    margin: 0px;
+    margin-top: 120px;
+}
+.malaria .symptoms .images img{
+      width: 40%;
+      border: 1px solid black;
+      border-radius: 50%;
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+}
+.malaria .symptoms .data .item1{
+    margin: 0px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: opx;
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+}
+.malaria .symptoms .data .item1 .line{
+  width: 100%;
+  height: 4px;
+  padding: 0px;
+  margin: 0px;
+  background-color: #0c8de0;
+}
+.typhoid{
+    margin:0px;
+    padding: 0px;
+    height: 300vh;
+    width: 100%;
+}
+.typhoid .image{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.typhoid .image img{
+    height: 400px;
+    width: 500px;
+}
+.typhoid .info{
+    text-align: center;
+    padding: 30px;
+
+}
+.typhoid .info h3{
+    font-size: 1.7em;
+    color: #0c8de0;
+
+
+}
+.typhoid .info p{
+    margin: 20px;
+    font-size: 1.2em;
+
+}
+.typhoid .symptoms{
+    width: 98%;
+  display: flex;
+  margin: 10px;
+  border: 2px solid black;
+
+}
+.typhoid .symptoms .image{
+    width: 50%;
+}
+.typhoid .symptoms .info{
+    width: 50%;
+    text-align: justify;
+
+}
+.typhoid .symptoms .info h2{
+    font-weight: 300px;
+    color: #0c8de0;
+}
+.typhoid .symptoms .info ol li{
+ margin: 5px;
+ font-size: 1.3em;
+
+
+}
+.typhoid .treatment{
+
+    display: flex;
+    margin: 40px;
+    width: 90%;
+    background-color: antiquewhite;
+
+}
+.typhoid .treatment .info{
+    width: 60%;
+    color: rgb(0, 0, 0.5);
+}
+.typhoid .treatment .info h2{
+    text-align: center;
+    color: #0c8de0;
+    font-size: 1.4em;
+    margin: 10px;
+
+
+}
+.typhoid .treatment .info ul{
+    text-align: justify;
+    text-justify: auto;
+    font-size: 1.1em;
+
+}
+.typhoid .treatment .info ul li{
+    margin: 10px;
+}
+.typhoid .prevention{
+    display: flex;
+    margin: 40px;
+    width: 90%;
+
+}
+.typhoid .prevention .image{
+
+}
+.typhoid .prevention .info{width: 60%;
+    color: rgb(0, 0, 0.5);}
+ .typhoid .prevention .info h2{
+        text-align: center;
+        color: #0c8de0;
+        font-size: 1.4em;
+        margin: 10px;
+    
+    }
+    .typhoid .prevention .info ul{
+      
+        text-align: justify;
+        text-justify: auto;
+        font-size: 1.4em;
+    }
+    .typhoid .prevention .info ul li{
+        margin: 10px;
+    }
+  
+    .cholera{
+      height: 200vh;
+      background-color: #007f3c;
+      width: 100%;
+    }
+    .cholera h1{
+        text-align: center;
+        color: #0c8de0;
+        font-size: 1.5em;
+    }
+    .cholera p{
+        text-justify: distribute;
+        text-align: justify;
+        font-size: 1.4em;
+
+
+    }
+    .cholera .sign{
+        margin: 20px;
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: azure;
+     
+    }
+    .cholera .prevent{
+        margin: 20px;
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: azure;
+
+
+    }
+    .cholera .treat{
+        margin: 20px;
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: azure;
+    }
+   .cholera .treat h2{
+   text-align: center;
+   color: #0c8de0;
+   margin: 10px;
+   
+   
+   }
+   .cholera .sign h2{
+   text-align: center;
+   color: #0c8de0;
+   margin: 10px;
+   
+   
+   }
+    .cholera .prevent h2{
+   text-align: center;
+   color: #0c8de0;
+   margin: 10px;
+   
+   
+   }
+   .cholera .treat ol li{
+    margin: 10px;
+    list-style: none;
+    text-justify: distribute;
+    font-size: 1.2em;
+    text-align: justify;
+
+    
+   
+   }
+   .cholera .prevent ol li{
+    margin: 10px;
+    list-style: none;
+    text-justify: distribute;
+    font-size: 1.2em;
+    text-align: justify;
+
+    
+   
+   }
+   .cholera .sign ol li{
+    margin: 10px;
+    list-style: none;
+    text-justify: distribute;
+    font-size: 1.2em;
+    text-align: justify;
+   }
+   .hiv{
+    height: 255vh;
+    margin: 0px;
+    padding: 0px;
+   }
+
+   .hiv h1{
+   color:red;
+   text-align: center;
+   font-size: 2em;
+   margin: 10px;
+   }
+   .hiv p{
+     font-size: 1.2em;
+     text-align: justify;
+   }
+   .hiv .hero .info{
+     text-align: center;
+     font-size: 1.5em;
+     margin: 0px;
+     margin-top: 70px;
+     color:black;
+   }
+   .awareness{
+    background-color: #007f3c;
+    height: 100vh;
+    margin: 20px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+   }
+   .awareness .item1 img{
+    height: 200px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 2px 2px 1rem black;
+
+   }
+   .hiv .cure{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+   .hiv .cure .symptoms{
+    margin-top: 20px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+   }
+   .hiv .cure .symptoms ul li{
+    list-style: none;
+    margin: 10px;
+    font-size: 1.2em;
+   }
+   .hiv .end{
+  width: 100%;
+  height: 20vh;
+  background-color: black;
+
+   }
+   .vh{
+    height: 453vh;
+
+   }
+   .vh .home{
+    height: 70vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 255, 0.347),rgba(49, 49, 170, 0.534)),url(images/t11.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+   }
+   .vh .ty{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .vh .ty .sign{
+    right: 50%;
+   }
+   .vh .ty .sign p{
+    font-size: 1.3em;
+    margin: 10px;
+    text-align: justify;
+
+
+   }
+   .vh .ty .sign h2{
+    color: #0c8de0;
+    margin: 10px;
+   }
+   .vh .ty .sign ul li{
+    font-size: 1.3em;
+    margin: 10px;
+    text-align: justify;
+   }
+   .vh .ty .sign ul li span{
+    font-weight: bold;
+   }
+
+
+
+   
+/*health concerns*/
+  .hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('images/green.jpg'); 
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .health-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .health-link {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .health-link:hover {
+    transform: scale(1.1);
+  }
+  
+  .mental-health {
+    background-color: #007f3c; 
+  }
+  
+  .nutrition {
+    background-color: #0c8de0; 
+  }
+  
+  .fitness {
+    background-color:#007f0875; 
+  }
+  
+  .chronic-conditions {
+    background-color: #007f3c; 
+  }
+  
+  .preventive-care {
+    background-color: #0c8de0; 
+  }
+  
+  /* Health Sections */
+  .health-section {
+    padding: 80px 20px;
+    text-align: left;
+  }
+  
+  .section-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .health-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .health-section h3 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .health-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .health-section ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .health-section ul li {
+    margin-bottom: 10px;
+  }
+  
+
+  .mental-health {
+    background-color: #007f3c; 
+  }
+  
+  .nutrition {
+    background-color: #0c8de0; 
+  }
+  
+  .fitness {
+    background-color: #007f3c; 
+  }
+  
+  .chronic-conditions {
+    background-color: #0c8de0; 
+  }
+  
+  .preventive-care {
+    background-color: #007f3c; 
+  }
+ .resources .link{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+ }

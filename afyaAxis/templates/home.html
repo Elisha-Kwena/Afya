@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Afya - Axis{% endblock %}
+
+{% block content %}
+<h1>WELCOME TO AFYA - AXIS</h1>
+<section class="herosection">
+    <div class="hero">
+        <div class="heroleft">
+            <p><span>Stay informed:</span> Keep up to date with the latest health information and guidelines from reputable sources.</p><br>
+                <p><span>Utilize Telehealth:</span> Explore telehealth options for convenient and accessible healthcare consultations.</p><br>
+                <p><span>Join Health Communities: </span>Connect with otherswho share your health goals for support and motivation.</p><br>
+        </div>
+        <div class="heroright">
+            <img src="{% static 'images/afya.jpg' %}" alt="">
+        </div>
+    </div>
+</section>
+<section class="gallery">
+    <h1>Why us</h1>
+    <div class="imagebox">
+        <div class="image">
+            <img src="{% static '/images/heart.jpg'%}" alt="">
+            <h2>Heart Diseases Treatment</h2>
+        </div>
+        <div class="image">
+            <img src="{% static '/images/uterus.jpg'%}" alt="">
+            <h2>Uterus Diseases Treatment</h2>
+        </div>
+    </div>
+</section>
+<section class="faqs">
+    <h2>Frequently asked questions</h2>
+    <div class="faqsdiv">
+        <div class="faq-item"data-aos="fade-left"  data-aos-duration="1000">
+            <h3>What are the symptoms of the flu?</h3>
+            <p>The flu typically presents with fever, cough, sore throat, body aches, and fatigue.</p>
+        </div>
+        <div class="faq-item"data-aos="slide-left"  data-aos-duration="1000">
+            <h3>How can I prevent the spread of COVID-19?</h3>
+            <p>Wearing masks, practicing social distancing, and frequent hand washing are effective measures.</p>
+        </div>
+        <div class="faq-item"data-aos="fade-down"  data-aos-duration="1000">
+            <h3>What is the recommended vaccination schedule for children?</h3>
+            <p>Children should receive vaccinations according to the CDC's recommended schedule.</p>
+        </div>
+        <div class="faq-item"data-aos="fade-left"  data-aos-duration="1000">
+            <h3>What should I do if I have a severe allergic reaction?</h3>
+            <p>Seek immediate medical attention and use an epinephrine auto-injector if available.</p>
+        </div>
+        <div class="faq-item"data-aos="fade-right"  data-aos-duration="1000">
+            <h3>How often should I get a health check-up?</h3>
+            <p>Adults should have a health check-up at least once a year, or as recommended by their doctor.</p>
+        </div>
+        <div class="faq-item"data-aos="fade-up"  data-aos-duration="1000">
+            <h3>What are the benefits of regular exercise?</h3>
+            <p>Regular exercise improves cardiovascular health, strengthens muscles, and enhances mental well-being.</p>
+        </div>
+    </div>
+</section>
+<section class="about">
+    <div class="about-us" data-aos="slide-left"  data-aos-duration="1000">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing the best service possible.</p>
+        <p>Our team is committed to excellence and innovation.</p>
+        <p>Join us on our journey to make a difference.</p>
+    </div>
+</section>
+{% endblock %}

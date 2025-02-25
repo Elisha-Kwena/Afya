@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Public health Concerns{% endblock %}
+
+{% block content %} 
+<section class="hero-section">
+    <div class="hero-content">
+      <h1>Your Health Matters</h1>
+      <p>Explore resources for various health concerns:</p>
+      <div class="health-links">
+        <a href="#mental-health" class="health-link mental-health">Mental Health</a>
+        <a href="#nutrition" class="health-link nutrition">Nutrition</a>
+        <a href="#fitness" class="health-link fitness">Fitness</a>
+        <a href="#chronic-conditions" class="health-link chronic-conditions">Chronic Conditions</a>
+        <a href="#preventive-care" class="health-link preventive-care">Preventive Care</a>
+      </div>
+    </div>
+  </section>
+  <section id="mental-health" class="health-section mental-health">
+    <div class="section-content">
+      <h2>Mental Health</h2>
+      <p>Mental health is a critical component of overall well-being. It affects how we think, feel, and act in daily life. Here are some key aspects of mental health:</p>
+      <h3>Why Mental Health Matters</h3>
+      <ul>
+        <li>Improves productivity and focus.</li>
+        <li>Enhances relationships and social connections.</li>
+        <li>Reduces the risk of physical health problems.</li>
+      </ul>
+      <h3>Tips for Improving Mental Health</h3>
+      <ul>
+        <li>Practice mindfulness and meditation.</li>
+        <li>Stay physically active.</li>
+        <li>Seek professional help when needed.</li>
+        <li>Maintain a healthy work-life balance.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="nutrition" class="health-section nutrition">
+    <div class="section-content">
+      <h2>Nutrition</h2>
+      <p>Good nutrition is the foundation of a healthy lifestyle. It fuels your body, supports immune function, and reduces the risk of chronic diseases. Here’s what you need to know:</p>
+      <h3>Key Nutrients</h3>
+      <ul>
+        <li><strong>Proteins:</strong> Essential for muscle repair and growth.</li>
+        <li><strong>Carbohydrates:</strong> Provide energy for daily activities.</li>
+        <li><strong>Fats:</strong> Support brain health and hormone production.</li>
+        <li><strong>Vitamins & Minerals:</strong> Boost immunity and overall health.</li>
+      </ul>
+      <h3>Healthy Eating Tips</h3>
+      <ul>
+        <li>Eat a variety of fruits and vegetables daily.</li>
+        <li>Choose whole grains over refined grains.</li>
+        <li>Limit added sugars and saturated fats.</li>
+        <li>Stay hydrated by drinking plenty of water.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="fitness" class="health-section fitness">
+    <div class="section-content">
+      <h2>Fitness</h2>
+      <p>Regular physical activity is essential for maintaining a healthy body and mind. It improves cardiovascular health, builds strength, and boosts mental well-being. Here’s how to stay fit:</p>
+      <h3>Benefits of Exercise</h3>
+      <ul>
+        <li>Improves heart health and circulation.</li>
+        <li>Helps maintain a healthy weight.</li>
+        <li>Reduces stress and anxiety.</li>
+        <li>Boosts energy levels.</li>
+      </ul>
+      <h3>Fitness Tips</h3>
+      <ul>
+        <li>Aim for at least 150 minutes of moderate exercise per week.</li>
+        <li>Incorporate strength training twice a week.</li>
+        <li>Try activities like yoga, swimming, or cycling.</li>
+        <li>Stay consistent and set realistic goals.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="chronic-conditions" class="health-section chronic-conditions">
+    <div class="section-content">
+      <h2>Chronic Conditions</h2>
+      <p>Chronic conditions like diabetes, hypertension, and arthritis require ongoing management. With proper care, you can lead a healthy and fulfilling life. Here’s what you need to know:</p>
+      <h3>Common Chronic Conditions</h3>
+      <ul>
+        <li><strong>Diabetes:</strong> Manage blood sugar levels through diet, exercise, and medication.</li>
+        <li><strong>Hypertension:</strong> Monitor blood pressure regularly and reduce salt intake.</li>
+        <li><strong>Arthritis:</strong> Stay active and use joint-friendly exercises.</li>
+      </ul>
+      <h3>Management Tips</h3>
+      <ul>
+        <li>Follow your healthcare provider’s advice.</li>
+        <li>Take prescribed medications on time.</li>
+        <li>Adopt a healthy lifestyle to manage symptoms.</li>
+        <li>Join support groups for motivation and guidance.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="preventive-care" class="health-section preventive-care">
+    <div class="section-content">
+      <h2>Preventive Care</h2>
+      <p>Preventive care focuses on detecting and preventing health issues before they become serious. Regular check-ups and screenings are key to staying healthy. Here’s why it matters:</p>
+      <h3>Importance of Preventive Care</h3>
+      <ul>
+        <li>Early detection of diseases like cancer and diabetes.</li>
+        <li>Reduces healthcare costs in the long run.</li>
+        <li>Improves quality of life and longevity.</li>
+      </ul>
+      <h3>Preventive Care Tips</h3>
+      <ul>
+        <li>Schedule annual check-ups with your doctor.</li>
+        <li>Get recommended vaccinations.</li>
+        <li>Stay up-to-date with screenings (e.g., mammograms, colonoscopies).</li>
+        <li>Adopt a healthy lifestyle to prevent diseases.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="resources">
+    <h2>health concerns more resources</h2>
+    <div class="link">
+      <div class="who"> <img src="images/world health organisation.jpg" alt="" width="300"><a href="https://www.annualreviews.org/page/worldhealththreats">click here</a></div>
+      <div class="youtube"><img src="images/youtube.jpg" alt="" width="300"><a href="https://www.youtube.com/watch?v=_tLdyI5t96g&pp=ygUNaGVhbHRoIGFsZXJ0cw%3D%3D" >click here</a></div>
+      <div class="medicare"><img src="images/medicare.jpg" alt="" width="300"><a href="https://www.healthaffairs.org/do/10.1377/forefront.20240226.78751/">click here</a></div>
+    </div>
+  </section>  
+{% endblock %}

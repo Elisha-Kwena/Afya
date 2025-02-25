@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Dr.{{doctor.name}}'s Profile Page{% endblock %}
+
+{% block content %} 
+
+<section class="docprofile">
+    <div class="profilecontainer">
+        <div class="topside">
+            <div class="imageside">
+                {% if doctor.profile_picture%}
+                <img src="{{ doctor.profile_picture.url }}" alt="Doctor's Picture">
+                {%else%}
+                <img src="{%static 'images/logo.png' %}" alt="">
+                {%endif%}
+            </div>
+            <div class="detailside">
+                <div class="personaldetails">
+                    <h1>Dr. <span>  {{doctor.name}}</span></h1>
+                    <h2>Email: <span>{{doctor.email}}</span></h2>
+                    <h2>Phone_number: <span>{{doctor.phone_number}}</span></h2>
+                    <div class="linksbox">
+                        <h1>Socials</h1>
+                        <div class="links">
+                            <a href="">
+                                <ion-icon class="linkedin" name="logo-linkedin"></ion-icon>
+                            </a>
+                            <a href="">
+                                <ion-icon class="facebook" name="logo-facebook"></ion-icon>
+                            </a>
+                            <a href="">
+                                <ion-icon class="twitter" name="logo-twitter"></ion-icon>
+                            </a>
+                            <a href="">
+                                <ion-icon class="whatsapp" name="logo-whatsapp"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profession">
+                    <h4>Profession</h4>
+                    <h2>Specialization: <span>{{doctor.specialization}}</span></h2>
+                    <h2>Years of Experience: <span>4 years</span></h2>
+                    <h2>Hire Date: <span>{{doctor.created_at}}</span></h2>
+                    <h2>Year Worked at Afya Axis: <span>{{doctor.created_at}}</span></h2>
+                    <div class="ratings">
+                        <h4>Ratings</h4>
+                        <div class="rates">
+                            <ion-icon class="rate" name="star"></ion-icon>
+                            <ion-icon class="rate" name="star"></ion-icon>
+                            <ion-icon class="rate" name="star"></ion-icon>
+                            <ion-icon class="rate" name="star"></ion-icon>
+                            <ion-icon class="rate" name="star"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                .
+            </div>
+        </div>
+        <div class="middle">
+            <div class="residential">
+                <div class="residentialdetail">
+                    <h1>Residence</h1>
+                    <h2>Residential: <span>{{doctor.location}}</span></h2>
+                    <h2>Distance From CBD: <span>{{doctor.distance}} Km</span></h2>
+                </div>
+                <div class="aboutdoc">
+                    <h1>About Dr. <span>{{doctor.name}}</span></h1>
+                    <p>{{doctor.about}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <h1>Patients Reviews</h1>
+            <div class="reviewcards">
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="patientimage">
+                        <img src="{%static 'images/power.jpg'%}" alt="">
+                    </div>
+                    <h2>PatientName</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, repudiandae? Placeat ut nobis corporis ipsum totam, dicta et blanditiis sunt ratione consequuntur ullam</p>
+                    <div class="day">
+                        <ion-icon name="calendar"></ion-icon>
+                        <h2>Session day: <span> March 2 2015</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+{% endblock %}

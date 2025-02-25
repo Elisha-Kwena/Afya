@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}{{clinic.name}} Clinic{% endblock %}
+
+{% block content %}   
+<section class="clinicpage">
+    <div class="clinicdetails">
+        <div class="clinicbanner">
+            {%if clinic.image%}
+            <img src="{{clinic.image.url}}" alt="">
+            {%else%}
+            <img class="mainlogo" src="{% static 'images/logo.png'%}" alt="">
+            {%endif%}
+        </div>
+        <div class="clinicabout">
+            <div class="servicesdiv" id="moreservices">
+                <div class="services">
+                    {% for service in clinic_services %}
+                    <div class="servicecontainer">
+                        <div class="serviceimage">
+                            <img src="{{service.image.url}}" alt="">
+                        </div>
+                        <div class="servicedetails">
+                            <h2>{{service.name}}</h2>
+                            <p>{{ service.description|truncatechars:300 }}</p>
+                            <h3>Service Ratings</h3>
+                            <div class="serviceratings">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor%}
+                    <div class="viewmore">
+                        <button id="less">View Less</button>
+                    </div>
+                </div>
+            </div>
+            <div class="top">
+                <h1>{{clinic.name}}</h1>
+            </div>
+            <div class="detailsbox">
+                <h1>Below are some of our services</h1>
+                <div class="services">
+                    {% for service in clinic_services|slice:":2" %}
+                    <div class="servicecontainer">
+                        <div class="serviceimage">
+                            <img src="{{service.image.url}}" alt="">
+                        </div>
+                        <div class="servicedetails">
+                            <h2>{{service.name}}</h2>
+                            <p>{{ service.description|truncatechars:200 }}</p>
+                            <h3>Service Ratings</h3>
+                            <div class="serviceratings">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    {% if clinic_services|length > 2 %}
+                    <div class="viewmore">
+                        <button id="more">View More</button>
+                    </div>
+                    {%endif%}
+                </div>
+                <div class="cliniclocation">
+                    <div class="aboutdiv">
+                        <h2>About us</h2>
+                        <p>{{clinic.description}}</p> 
+                    </div>
+                    <div class="aboutdiv">
+                        <h2>Location</h2>
+                        <p>We are located in {{clinic.address}}<p>
+                        <h3>P.O BOX:&nbsp;<span>{{clinic.address}}</span></h3>
+                        <h3>Contact us:&nbsp;<span>{{clinic.phone_number}}</span></h3>
+                        <h3>Email us:&nbsp;<span>{{clinic.email}}</span></h3>
+                    </div>
+                    <div class="aboutdiv">
+                        <h2>opening hours</h2>
+                        <p>{{clinic.opening_hours}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

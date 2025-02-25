@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}{{ user.username }} profile{% endblock %}
+{% block content %} 
+{% if user.is_authenticated %}
+<section class="profile">
+    <div class="profile-container" >
+        <div class="profile-header">
+            <h2>{{ user.username }}'s Profile Page</h2>
+        </div>
+        <div class="profilepicture">
+            {% if user.profile.profile_picture %}
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" width="150">
+            {% else %}
+                <img src="{% static 'images/logo.png' %}" alt="Default Profile Picture" width="150">
+            {% endif %}
+        </div>
+        <div class="details">
+            <div class="detail">
+                <h2>Username:</h2>
+                <h3>{{ user.username }}</h3>
+            </div>
+            <div class="detail">
+                <h2>Firstname:</h2>
+                <h3>{{ user.first_name }}</h3>
+            </div>
+            <div class="detail">
+                <h2>Lastname:</h2>
+                <h3>{{ user.last_name }}</h3>
+            </div>
+            <div class="detail">
+                <h2>FullName:</h2>
+                <h3>{{ user.first_name }}&nbsp;{{ user.last_name }}</h3>
+            </div>
+            <div class="detail">
+                <h2>Email:</h2>
+                <h3>{{ user.email }}</h3>
+            </div>
+            <div class="detail">
+                <h2>Phone_Number:</h2>
+                <h3>{{ user.profile.phone_number }}</h3>
+            </div>
+            <div class="detail">
+                <h2>Gender:</h2>
+                <h3>{{ user.profile.sex }}</h3>
+            </div>
+            <div class="detail">
+                <h2>Location:</h2>
+                <h3>{{ user.profile.location }}</h3>
+            </div>
+        </div>
+        <div class="about" >
+            <div class="bio">
+                <h2>About me</h2>
+                <p>{{ user.profile.about }}</p>
+            </div>
+        </div>
+        <div class="update">
+            <a href="{% url 'update_profile' %}">Update your Profile</a>
+        </div>
+    </div>
+</section>
+{%else%}
+<p>You need to login first. <a href="{% url 'login' %}"></a></p>
+{%endif%}
+{% endblock %}

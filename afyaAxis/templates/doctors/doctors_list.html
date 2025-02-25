@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Doctors{% endblock %}
+{% block content %}   
+<section  class="doctor"> 
+{% if user.is_authenticated %} 
+        <section class="doctorslist">
+            {% for doctor in doctors %}
+            <div class="doctorslistbox">
+                <div class="doctordiv">
+                    <div class="doctordivleft">
+                        <div class="doctorprofile">
+                            {% if doctor.profile_picture%}
+                                 <img src="{{doctor.profile_picture.url}}" alt="" />
+                            {%else%}
+                                <img src="{%static 'images/logo.png'%}" alt="">
+                            {%endif%}
+                        </div>
+                        <div class="docdata">
+                            <h2>DR. {{doctor.name}}</h2>
+                            <p><span>Phone number:&nbsp;</span>{{doctor.phone_number}}</p>
+                            <p><span>Speciality:&nbsp;</span>{{doctor.specialization}}</p>
+                            <p><span>Location:&nbsp;</span> {{doctor.location}}</p>
+                        </div>
+                    </div>
+                    <div class="doctordivright">
+                        <h2>More</h2>
+                        <p>{{doctor.about}}</p>
+                        <div class="doctordivbuttons">
+                            <form action="{% url 'book_appointment' doctor.id %}">
+                                <button>Book Appointment</button>
+                            </form>
+                            <form action="{% url 'doctor_detail' doctor.id %}">
+                                <button class="view">View Profile</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+            {%if request.user.is_staff or request.user.is_superuser%}
+            <div class="new">
+                <a href="{% url 'register_doctor' %}">New doctor</a>
+            </div>
+            {%endif%}
+        </section>
+{%else%}
+     <div class="errorbox">
+         <div class="error">
+            <img src="{%static 'images/warning.png'%}" alt="">
+             <h1>Oops!! Sorry</h1>
+             <p>You need to be logged in to access this page !!</p>
+         </div>
+     </div>
+{%endif%}
+ </section>
+{% endblock %}
+
+

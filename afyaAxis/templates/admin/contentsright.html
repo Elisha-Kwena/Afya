@@ -1,0 +1,32 @@
+{% load static %}
+<div class="contentsright">
+    <div class="rightdiv">
+        <div class="calender">
+        </div>
+    </div>
+        <div class="docsbox">
+            {%for doctor in doctors|slice:":10"%}
+            <div class="doc">
+                <a href="">
+                    <div class="docpic">
+                        <img src="{{doctor.profile_picture.url}}" alt="">
+                    </div>
+                    <div class="docdetails">
+                        <h2>Dr. {{doctor.name}}</h2>
+                        <p>{{doctor.specialization}}</p>
+                        <div class="docratings">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {%endfor%}
+            <div class="docbtn">
+                <a href="">View all</a>
+            </div>
+        </div>
+</div>

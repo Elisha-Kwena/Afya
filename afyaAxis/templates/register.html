@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}SignIn to Afya - Axis{% endblock %}
+
+{% block content %}   
+<div class="formbox">
+    <div class="contents">
+        <div class="logobox">
+            <img src="{% static 'images/logo.png' %}" alt="Afya Axis Logo">
+        </div>
+        <form action="." method="POST">
+            {% csrf_token %}
+            <h1>Signup</h1>
+            <div class="container">
+                {{form.username}}
+                <label class="label">Username</label>
+            </div>
+            <div class="container">
+                {{form.email}}
+                <label class="label">Enter your email</label>
+            </div>
+            <div class="container">
+                {{form.password1}}
+                <label class="label">Password</label>
+            </div>
+            <div class="container">
+                {{form.password2}}
+                <label class="label">Confirm password</label>
+            </div>
+            <div class="terms">
+                <div class="inputdiv">
+                    <input type="checkbox" id="check" name="check" required class="check">
+                    <label for="check">I Agree to the Terms and Conditions</label>
+                </div>
+                <a href="#">View our Terms and Conditions</a>  
+            </div>
+            <div class="message">
+                <div class="messagebody"></div>
+            </div>
+            <div class="message">
+                <p>{{form.errors}}</p>
+            </div>
+            <div class="submitbtn">
+                <button type="submit" class="btn-17">
+                    <span class="text-container">
+                        <span class="text">SIGN UP</span>
+                    </span>
+                </button>
+                <a href="{% url 'login' %}">Sign in to an existing account!</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

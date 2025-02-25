@@ -1,0 +1,86 @@
+{% extends 'admin/admin_layout.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include 'admin/sidebarleft.html' %}
+<div class="mainbarcentre">
+    <div class="mainbarhead">
+        <div class="navleft">
+            <a class="dash" href="">Dashboard</a>
+            <a class="web" href=""><i class="fa-solid fa-globe"></i>View Website</a>
+        </div>
+        <div class="navright">
+            <a href=""><i class="fa-solid fa-message"></i><span>0</span></a>
+            <a href=""><i class="fa-solid fa-bell"></i><span>0</span></a>
+            <a href=""><img src="{{ admin_profile.profile_picture.url}}" alt=""></i></a>
+        </div>
+    </div>
+    <div class="maincontents">
+        <div class="contentsleft">
+            <div class="doctorsform">
+                <div class="top">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                    <h1>Afya-Axis Doctors Registration Form</h1>
+                </div>
+                <form action="." method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="personaldetails">
+                        <div class="inputcontainer">
+                            <label for="name">Full name</label>
+                            {{form.name}}
+                        </div>
+                        <div class="inputcontainer">
+                            <label for="email">Email</label>
+                            {{form.email}}
+                        </div>
+                        <div class="inputcontainer">
+                            <label for="phonenumber">Phonenumber</label>
+                            {{form.phone_number}}
+                        </div>
+                        <div class="inputcontainer">
+                            <label for="Speciality">Speciality</label>
+                            {{form.specialization}}
+                        </div>
+                        <div class="inputcontainer">
+                            <label for="experience">Years_of experience</label>
+                            {{form.experience}}
+                        </div>
+                        <div class="inputcontainer">
+                            <label for="location">Location</label>
+                            {{form.location}}
+                        </div>
+                        <div class="inputcontainer">
+                            <label for="distance">Distance from CBD</label>
+                            {{form.distance}}
+                        </div>
+                        <div class="inputcontainer">
+                            <label for="clinic">Clinic</label>
+                            {{form.clinic}}
+                        </div>
+                        <div class="inputcontainer">
+                            <label for="about">Bio</label>
+                           {{form.about}}
+                        </div>
+                        <div class="inputcontainer">
+                            <div class="select">
+                                <img src="{% static 'images/picture.png' %}" alt="">
+                                <label for="image">Select Image</label>
+                                {{form.profile_picture}}
+                            </div>
+                        </div>
+                </div>
+                    {{form.errors}}
+                    <div class="inputcontainer">
+                    <button type="submit" name="register_doctor">Submit Details</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        {% include 'admin/contentsright.html' %}
+    </div>
+</div>
+{% endblock %}

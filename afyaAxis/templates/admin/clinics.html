@@ -1,0 +1,52 @@
+{% extends 'admin/admin_layout.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include 'admin/sidebarleft.html' %}
+<div class="mainbarcentre">
+    <div class="mainbarhead">
+        <div class="navleft">
+            <a class="dash" href="">Dashboard</a>
+            <a class="web" href=""><i class="fa-solid fa-globe"></i>View Website</a>
+        </div>
+        <div class="navright">
+            <a href=""><i class="fa-solid fa-message"></i><span>0</span></a>
+            <a href=""><i class="fa-solid fa-bell"></i><span>0</span></a>
+            <a href=""><img src="{{ admin_profile.profile_picture.url}}" alt=""></i></a>
+        </div>
+    </div>
+    <div class="maincontents">
+        <div class="contentsleft beneficiaries">
+            <div class="add">
+                <h1>Clinics under AfyaAxis</h1>
+                <a href="">Add Clinic</a>
+            </div>
+            <div class="clinicscontainerdiv">
+                
+                <div class="clinicsset">
+                    {%for clinic in clinics%}
+                    <div class="clinicdiv">
+                        <div class="clinicimage">
+                            {%if clinic.image%}
+                            <img src="{{clinic.image.url}}" alt="">
+                            {%else%}
+                            <img class="mainlogo" src="{% static 'images/mainlogo.jpeg'%}" alt="">
+                            {%endif%}
+                        </div>
+                        <div class="viewclinic">
+                            <h3>{{clinic.name}}</h3>
+                            <form action="">
+                                <button>View about</button>
+                            </form>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+        {% include 'admin/contentsright.html' %}
+    </div>
+</div>
+{% endblock %}

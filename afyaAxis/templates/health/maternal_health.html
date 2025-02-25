@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Maternal and child health{% endblock %}
+
+{% block content %}  
+<div class="healthbar">
+    <section class="home2">
+        <h1>MATERNAL AND CHILD CARE</h1>
+        <P>Maternal and Child Care refers to a comprehensive approach to healthcare that focuses on ensuring the health and well-being of mothers and their children. It involves a wide range of services and practices that support women during pregnancy, childbirth, and the postnatal period, as well as the health and development of children from birth through adolescence.</P>
+    
+        <div class="class1">
+            <h1>Maternal Health Care</h1>
+            <p>Maternal healthcare refers to the medical care provided to women during pregnancy, childbirth, and postpartum. It aims to ensure a healthy pregnancy, safe delivery, and proper postpartum recovery.</p>
+            <ul>
+                <li><strong>Preconception Care</strong><br>
+    
+                    Ensures women are in optimal health before pregnancy.<br>
+                    Includes folic acid supplementation, vaccinations, and management of pre-existing conditions.<br>
+                    </li>
+                <li><strong>Antenatal (Prenatal) Care</strong><br>
+    
+                    Regular check-ups to monitor fetal development and maternal health.<br>
+                    Includes ultrasound scans, blood tests, and screening for complications (e.g., gestational diabetes, preeclampsia).<br>
+                    Nutrition counseling and supplementation (iron, calcium, and folic acid).</li><br>
+                <li><strong>Labor and Delivery Care</strong><br>
+    
+                    Monitoring for normal and high-risk deliveries.<br>
+                    Availability of skilled birth attendants.<br>
+                    Emergency obstetric care (C-sections, treatment of hemorrhage, and infections).</li><br>
+                <li><strong>Postnatal (Postpartum) Care</strong><br>
+    
+                    Monitoring the mother’s recovery after childbirth.<br>
+                    Mental health screening (postpartum depression).<br>
+                    Family planning and contraceptive counseling.<br>
+                    Breastfeeding support.</li>
+            </ul>
+        </div>
+    </section>
+    <section class="measures">
+        <div class="two">
+            <h2>Common Maternal Health Issues</h2>
+            <ol>
+                <li>Anemia: Common due to iron deficiency during pregnancy.</li>
+                <li>Gestational Diabetes: Affects blood sugar levels and requires monitoring.</li>
+                <li>Preeclampsia: High blood pressure during pregnancy that can be life-threatening.</li>
+                <li>Postpartum Depression: Affects mental health and requires early intervention.</li>
+                <li>Obstetric Fistula: A serious childbirth-related injury causing urinary incontinence.
+                </li>
+            </ol>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/mother1.png' %}" alt="">
+        </div>
+    </section>
+    <div class="child">
+        <div class="item1"><img src="{% static 'images/c1.jpg' %}" alt=""></div>
+        <div class="item1"><img src="{% static 'images/c2.jpg' %}" alt=""></div>
+        <div class="item1"><img src="{% static 'images/c3.jpg' %}" alt=""></div>
+    </div>
+    <section class="health">
+       <h1>CHILD HEALTH</h1>
+       <P>Child health focuses on ensuring children grow up healthy, with proper nutrition, immunization, and medical care.</P>
+       <div class="info">
+        <div class="image">
+            <img src="{% static 'images/new.jpg' %}" alt="">
+        </div>
+        <div class="new">
+            <h2>A. Newborn and Infant Care (0-12 months)</h2>
+            <ol>
+                <li>Immediate care after birth (cord care, skin-to-skin contact, early breastfeeding).</li>
+                <li>Screening for birth defects and infections.</li>
+                <li>Prevention of neonatal jaundice, hypothermia, and infections.</li>
+                <li>Exclusive breastfeeding for the first six months.</li>
+                <li>Introduction of solid foods after six months (complementary feeding).</li>
+                <li>Vitamin A, iron, and zinc supplementation if needed.</li>
+                <li>Essential vaccines: BCG, Hepatitis B, Polio, DPT (Diphtheria, Pertussis, Tetanus), Measles, Rotavirus.</li>
+            </ol>
+        </div>
+       </div>
+       <div class="info">
+         <div class="image"><img src="{% static 'images/early.jpg' %}" alt=""></div>
+         <div class="new">
+            <h2>B. Early Childhood Care (1-5 years)</h2>
+            <ol>
+                <li>Monitoring weight, height, and cognitive development.</li>
+                <li>Preventing malnutrition and micronutrient deficiencies.</li>
+                <li>Diarrhea (prevented by good hygiene and ORS treatment).</li>
+                <li>Pneumonia (prevented by vaccines and early treatment).</li>
+                <li>Malaria (prevented by mosquito nets and medication).</li>
+                <li>Measles (prevented by vaccination).</li>
+    
+            </ol>
+         </div>
+       </div>
+       <div class="info">
+        <div class="image"><img src="{% static 'images/school.jpg' %}" alt=""></div>
+        <div  class="new">
+            <h2>C. School-Age Child Health (6-12 years)</h2>
+            <ol>
+                <li>Continued nutrition and balanced diet.</li>
+                <li>Physical activity to prevent obesity and other health issues.</li>
+                <li>Vision and hearing screenings.</li>
+                <li>Prevention of infections through hygiene education.</li>
+            </ol>
+        </div>
+       </div>
+    </section>
+</div>
+{% endblock %}
