@@ -116,6 +116,12 @@
         </ul>
         
     <div class="settings">
+        {% if user.is_authenticated and user.is_staff%}
+        <a href="{% url 'admin_dashboard' %}">
+            <img src="{% static '/images/data-governance.png'%}" alt="">
+            <h2>Admin Dashboard</h2>
+        </a>
+        {%endif%}
         <a href="">
             <img src="{% static '/images/settings.png'%}" alt="">
             <h2>settings</h2>
