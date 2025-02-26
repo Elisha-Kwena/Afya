@@ -3,39 +3,49 @@
 {% load static %}
 {% block title %}Login to Afya - Axis{% endblock %}
 
-{% block content %}   
-<div class="formbox">
-    <div class="contents">
-        <div class="logobox">
-            <img src="{% static 'images/logo.png' %}" alt="Afya Axis Logo">
-        </div>
-        <form action="." method="POST">
-            {% csrf_token %}
-            <h1>SignIn</h1>
-            <p class="welcome">Welcome back to Afya - <span>Axis</span></p>
-            <div class="container">
-                {{form.username}}
-                <label class="label">Username</label>
-            </div>
-            <div class="container">
-                {{form.password}}
-                <label class="label">Password</label>
-            </div>
-            <div class="message">
-                <div class="messagebody"></div>
-            </div>
-            <div class="message">
-                <p>{{form.errors}}</p>
-            </div>
-            <div class="submitbtn">
-                <button type="submit" class="btn-17">
-                    <span class="text-container">
-                        <span class="text">SIGN IN</span>
-                    </span>
-                </button>
-                <a href="{% url 'register' %}">Create account!</a>
-            </div>
-        </form>
+{% block content %} 
+<div class="mainform">
+    <div class="mainformleft">
+        <img src="{% static 'images/logo.png' %}" alt="Afya Axis Logo">
     </div>
-</div>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <h2>Welcome back to</h2>
+        <h1>Afya Axis</h1>
+        <p>We are pleased to help you</p>
+        <div class="inputboxdiv">
+            {{form.username}}
+            <label for="username">Username</label>
+        </div>
+        <div class="inputboxdiv">
+            {{form.password}}
+            <label for="password1">Password</label>
+        </div>
+        {% if form.errors %}
+        <div class="errormessages">
+            <ul>
+                {%for field, errors in form.errors.items%}
+                    {%for error in errors%}
+                        <li>{{error}}</li>
+                    {%endfor%}
+                {%endfor%}
+            </ul>
+        </div>
+        {%endif%}
+        <div class="forgot">
+            <a href="">Forgot Password!</a>
+        </div>
+        <div class="submitbtn">
+            <button class="btn-17">
+                <span class="text-container">
+                <span class="text">SIGN IN</span>
+                </span>
+            </button>
+        </div>
+        <div class="signin">
+            <a href="{% url 'register' %}">Create an account!</a>
+        </div>
+    </form>
+</div>  
+
 {% endblock %}

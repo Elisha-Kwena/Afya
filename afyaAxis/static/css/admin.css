@@ -306,17 +306,16 @@ main .mainbarcentre .mainbarhead .navright form i{
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0,0.1);
     padding: 5px;
     height: 70px;
 }
 .appointments .appdiv i{
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(194, 196, 197);
 }
 .appointments .appdiv .side h2{
     color: var(--basecolor);
-    font-size: 18px;
+    font-size: 16px;
 }
 .appointments .appdiv .side h3{
     font-size: 16px;
@@ -1051,3 +1050,101 @@ main .mainbarcentre .mainbarhead .navright form i{
     background-color: #007f3c;
 }
 
+
+/* clinic form========================================================= */
+.clinicform{
+    width: 100%;
+}
+.clinicform form{
+    width: 100%;
+    padding: 10px 20px;
+}
+.clinicform form .topform{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.clinicform form .topform img{
+    width: 90px;
+}
+.clinicform form .topform h1{
+    color: #007f3c;
+}
+.clinicform form .inputcontrol{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.clinicform form .inputcontrol .form_control{
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #000000;
+    border: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.clinicform form .inputcontrol .form_textarea{
+    width: 100%;
+    padding: 7px;
+    height: 100px;
+    max-height: 100px;
+    border-radius: 3px;
+    color: #000000;
+    font-size: 16px;
+    border: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.clinicform form .control{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 30px;
+}
+.clinicform form .control img{
+    width: 40px;
+}
+.clinicform form .control label{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.clinicform form .control .form_control{
+    width: 75%;
+}
+.clinicform form .control2 .check{
+    margin-bottom: 10px;
+}
+.clinicform form .control2 h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.clinicform form .control2 .form_service{
+    
+    background-color: red;
+}
+
+.clinicform form .inputcontrol label{
+    color: #0c8de0;
+    font-size: 18px;
+}
+.clinicform form .inputbutton{
+    width: 100%;
+    margin-top: 20px;
+}
+.clinicform form .inputbutton button{
+    width: 100%;
+    margin-top: 20px;
+    background-color: #0c8de0;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    font-size: 24px;
+    border-radius: 3px;
+    border: none;
+}

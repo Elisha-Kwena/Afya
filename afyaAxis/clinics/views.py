@@ -15,7 +15,7 @@ def clinicPage(request):
 def new_clinic(request):
     if request.method == "POST":
         print(request.POST) 
-        form = NewClinic(request.POST)
+        form = NewClinic(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             print("Clinic saved!") 

@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --maincolor:#007f3c;
+    --basecolor:#0c8de0;
+}
+body{
+    width: 100%;
+}
+main{
+    width: 100%;
+}
+.mainform{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.mainformleft{
+    width: 50%;
+}
+.mainformleft img{
+    width: 100%;
+
+}
+.mainform form{
+    width: 50%;
+    padding: 20px;
+    background: linear-gradient(#0075424a,#3aa34672,#0075424e);
+
+}
+.mainform form h1{
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.mainform form p{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.mainform form h2{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.mainform form .inputboxdiv{
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+}
+.mainform form .inputboxdiv .input{
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    padding:10px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+.mainform form .inputboxdiv label{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transition: .5s;
+    color: azure;
+}
+.mainform form .inputboxdiv .input:focus{
+    outline: none;
+    color: #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+.mainform form .inputboxdiv .input:focus ~label,
+.mainform form .inputboxdiv .input:valid ~label{
+    transform: translateY(-30px);
+}
+.signin,
+.termsof,
+.forgot{
+    width: 100%;
+    margin-top: 10px;
+}
+.signin a,
+.forgot a{
+    text-decoration: none;
+    color: #0c8de0;
+}
+.submitbtn{
+    width: 100%;
+    margin-top: 10px;
+}
+.errormessages{
+    width: 100%;
+}
+.errormessages ul{
+    list-style-type: none;
+}
+.errormessages ul li {
+    color:red;
+}
+
+.btn-17,
+.btn-17 *,
+.btn-17 :after,
+.btn-17 :before,
+.btn-17:after,
+.btn-17:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-17 {
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-17:disabled {
+  cursor: default;
+}
+
+.btn-17:-moz-focusring {
+  outline: auto;
+}
+
+.btn-17 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-17 [hidden] {
+  display: none;
+}
+
+.btn-17 {
+    width: 100%;
+    border-radius: 4px;
+    border-width: 2px;
+    padding: 0.4rem 3rem;
+  z-index: 0;
+}
+
+.btn-17,
+.btn-17 .text-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-17 .text-container {
+  display: block;
+  mix-blend-mode: difference;
+}
+
+.btn-17 .text {
+  display: block;
+  position: relative;
+}
+
+.btn-17:hover .text {
+  -webkit-animation: move-up-alternate 0.3s forwards;
+  animation: move-up-alternate 0.3s forwards;
+}
+
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.btn-17:after,
+.btn-17:before {
+  --skew: 0.2;
+  background:#007542;
+  content: "";
+  display: block;
+  height: 102%;
+  left: calc(-50% - 50% * var(--skew));
+  pointer-events: none;
+  position: absolute;
+  top: -104%;
+  transform: skew(calc(150deg * var(--skew))) translateY(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+
+.btn-17:after {
+  --progress: 0%;
+  left: calc(50% + 50% * var(--skew));
+  top: 102%;
+  z-index: -1;
+}
+
+.btn-17:hover:before {
+  --progress: 100%;
+}
+
+.btn-17:hover:after {
+  --progress: -102%;
+}
+

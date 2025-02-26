@@ -18,7 +18,7 @@ class Clinic(models.Model):
     services = models.ManyToManyField(ClinicServices, related_name='clinics')
     opening_hours = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='clinics_images',null =True,blank=True)
+    image = models.ImageField(upload_to='clinics_images',null =True,blank=True,default='profile_pics/logo.png')
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):

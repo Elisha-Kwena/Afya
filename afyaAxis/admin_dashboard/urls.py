@@ -9,6 +9,7 @@ urlpatterns = [
     path('users/',views.users,name="users"),
     path('docprofile/<int:id>/',views.doctorsprofile,name="docprofile"),
     path('doctorspage/',views.doctors,name="doctorspage"),
-    path('doctor_form/',views.doctor_registration,name='doctor_form')
+    path('doctor_form/',views.doctor_registration,name='doctor_form'),
+    path('clinic_form/',views.register_new_clinic,name='clinic_form')
     
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

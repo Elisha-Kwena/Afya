@@ -5,6 +5,7 @@ from doctors.models import Doctors,Appointment
 from clinics.models import Clinic
 from base.models import Profile
 from doctors.forms import DoctorForm
+from clinics.forms import NewClinic
 
 User = get_user_model()
 
@@ -23,11 +24,13 @@ def dashboard(request):
     
     appointments_count = Appointment.objects.count()
     doctors_count =Doctors.objects.count()
+    clinics_count = Clinic.objects.count()
     
     context = {
         'users':users,
         'doctors':doctors,
         'clinics':clinics,
+        'clinics_count':clinics_count,
         'admin_user':admin_user,
         'appointments_count': appointments_count,
         'admin_profile':admin_profile,
@@ -135,3 +138,32 @@ def doctor_registration(request):
         'admin_profile':admin_profile,
     }
     return render(request,'admin/forms/doctorsform.html',context)
+
+@login_required
+@user_passes_test(is_admin)
+def register_new_clinic(request):
+    if request.method == "POST":
+        form = NewClinic(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('adminclinics')
+        else:
+            print(form.errors)
+    else:
+        form = NewClinic()
+        
+    admin_user = request.user
+    admin_profile = Profile.objects.filter(user=admin_user).first()
+    users = Profile.objects.select_related('user')
+    doctors = Doctors.objects.all()
+    clinics = Clinic.objects.all()
+    
+    context = {
+        'form':form,
+        'users':users,
+        'doctors':doctors,
+        'clinics':clinics,
+        'admin_user':admin_user,
+        'admin_profile':admin_profile,
+    }
+    return render(request,'admin/forms/clinic_form.html',context)

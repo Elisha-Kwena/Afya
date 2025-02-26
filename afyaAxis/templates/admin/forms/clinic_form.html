@@ -1,0 +1,76 @@
+{% extends 'admin/admin_layout.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include 'admin/sidebarleft.html' %}
+<div class="mainbarcentre">
+    <div class="mainbarhead">
+        <div class="navleft">
+            <a class="dash" href="">Dashboard</a>
+            <a class="web" href=""><i class="fa-solid fa-globe"></i>View Website</a>
+        </div>
+        <div class="navright">
+            <a href=""><i class="fa-solid fa-message"></i><span>0</span></a>
+            <a href=""><i class="fa-solid fa-bell"></i><span>0</span></a>
+            <a href=""><img src="{{ admin_profile.profile_picture.url}}" alt=""></i></a>
+        </div>
+    </div>
+    <div class="maincontents">
+        <div class="contentsleft">
+            <div class="clinicform">
+                <form action="." method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="topform">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                        <h1>Afya Axis New Clinic registration</h1>
+                    </div>
+                    <div class="inputcontrol">
+                        <label for="name">Clinic Name</label><br>
+                        {{form.name}}
+                    </div>
+                    <div class="inputcontrol">
+                        <label for="name">Email:</label><br>
+                        {{form.email}}
+                    </div>
+                    <div class="inputcontrol">
+                        <label for="name">Phone number:</label><br>
+                        {{form.phone_number}}
+                    </div>
+                    <div class="inputcontrol">
+                        <label for="name">Address:</label><br>
+                        {{form.address}}
+                    </div>
+                    <div class="inputcontrol">
+                        <label for="name">Description:</label><br>
+                        {{form.description}}
+                    </div>
+                    <div class="inputcontrol">
+                        <label for="name">Opening_hours:</label><br>
+                        {{form.opening_hours}}
+                    </div>
+                    <div class="inputcontrol control2">
+                        <h2>Services</h2>
+                        <div class="check">
+                            {{form.services}}
+                            {% comment %} <label for="banner">Services</label> {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="inputcontrol control">
+                        <label for="banner">
+                            Clinic banner
+                            <img src="{% static 'images/picture.png' %}" alt="">
+                        </label><br>
+                        {{form.image}}
+                    </div>
+                    <div class="inputbutton">
+                        <button>Submit Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% include 'admin/contentsright.html' %}
+    </div>
+</div>
+{% endblock %}
